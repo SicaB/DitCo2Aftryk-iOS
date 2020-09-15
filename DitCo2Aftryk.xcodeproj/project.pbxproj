@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		993624FF2510A4E6002BF468 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993624FE2510A4E6002BF468 /* AppDelegate.swift */; };
+		993625012510A4E6002BF468 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625002510A4E6002BF468 /* SceneDelegate.swift */; };
+		993625032510A4E6002BF468 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625022510A4E6002BF468 /* ViewController.swift */; };
+		993625062510A4E6002BF468 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 993625042510A4E6002BF468 /* Main.storyboard */; };
+		993625092510A4E6002BF468 /* DitCo2Aftryk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 993625072510A4E6002BF468 /* DitCo2Aftryk.xcdatamodeld */; };
+		9936250B2510A4E7002BF468 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9936250A2510A4E7002BF468 /* Assets.xcassets */; };
+		9936250E2510A4E7002BF468 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9936250C2510A4E7002BF468 /* LaunchScreen.storyboard */; };
+		993625192510A4E7002BF468 /* DitCo2AftrykTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625182510A4E7002BF468 /* DitCo2AftrykTests.swift */; };
+		993625242510A4E7002BF468 /* DitCo2AftrykUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625232510A4E7002BF468 /* DitCo2AftrykUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		993625152510A4E7002BF468 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 993624F32510A4E6002BF468 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 993624FA2510A4E6002BF468;
+			remoteInfo = DitCo2Aftryk;
+		};
+		993625202510A4E7002BF468 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 993624F32510A4E6002BF468 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 993624FA2510A4E6002BF468;
+			remoteInfo = DitCo2Aftryk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		993624FB2510A4E6002BF468 /* DitCo2Aftryk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DitCo2Aftryk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		993624FE2510A4E6002BF468 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		993625002510A4E6002BF468 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		993625022510A4E6002BF468 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		993625052510A4E6002BF468 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		993625082510A4E6002BF468 /* DitCo2Aftryk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DitCo2Aftryk.xcdatamodel; sourceTree = "<group>"; };
+		9936250A2510A4E7002BF468 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9936250D2510A4E7002BF468 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9936250F2510A4E7002BF468 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		993625142510A4E7002BF468 /* DitCo2AftrykTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DitCo2AftrykTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		993625182510A4E7002BF468 /* DitCo2AftrykTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DitCo2AftrykTests.swift; sourceTree = "<group>"; };
+		9936251A2510A4E7002BF468 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9936251F2510A4E7002BF468 /* DitCo2AftrykUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DitCo2AftrykUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		993625232510A4E7002BF468 /* DitCo2AftrykUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DitCo2AftrykUITests.swift; sourceTree = "<group>"; };
+		993625252510A4E7002BF468 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		993624F82510A4E6002BF468 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		993625112510A4E7002BF468 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9936251C2510A4E7002BF468 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		993624F22510A4E6002BF468 = {
+			isa = PBXGroup;
+			children = (
+				993624FD2510A4E6002BF468 /* DitCo2Aftryk */,
+				993625172510A4E7002BF468 /* DitCo2AftrykTests */,
+				993625222510A4E7002BF468 /* DitCo2AftrykUITests */,
+				993624FC2510A4E6002BF468 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		993624FC2510A4E6002BF468 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				993624FB2510A4E6002BF468 /* DitCo2Aftryk.app */,
+				993625142510A4E7002BF468 /* DitCo2AftrykTests.xctest */,
+				9936251F2510A4E7002BF468 /* DitCo2AftrykUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		993624FD2510A4E6002BF468 /* DitCo2Aftryk */ = {
+			isa = PBXGroup;
+			children = (
+				993624FE2510A4E6002BF468 /* AppDelegate.swift */,
+				993625002510A4E6002BF468 /* SceneDelegate.swift */,
+				993625022510A4E6002BF468 /* ViewController.swift */,
+				993625042510A4E6002BF468 /* Main.storyboard */,
+				9936250A2510A4E7002BF468 /* Assets.xcassets */,
+				9936250C2510A4E7002BF468 /* LaunchScreen.storyboard */,
+				9936250F2510A4E7002BF468 /* Info.plist */,
+				993625072510A4E6002BF468 /* DitCo2Aftryk.xcdatamodeld */,
+			);
+			path = DitCo2Aftryk;
+			sourceTree = "<group>";
+		};
+		993625172510A4E7002BF468 /* DitCo2AftrykTests */ = {
+			isa = PBXGroup;
+			children = (
+				993625182510A4E7002BF468 /* DitCo2AftrykTests.swift */,
+				9936251A2510A4E7002BF468 /* Info.plist */,
+			);
+			path = DitCo2AftrykTests;
+			sourceTree = "<group>";
+		};
+		993625222510A4E7002BF468 /* DitCo2AftrykUITests */ = {
+			isa = PBXGroup;
+			children = (
+				993625232510A4E7002BF468 /* DitCo2AftrykUITests.swift */,
+				993625252510A4E7002BF468 /* Info.plist */,
+			);
+			path = DitCo2AftrykUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		993624FA2510A4E6002BF468 /* DitCo2Aftryk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 993625282510A4E7002BF468 /* Build configuration list for PBXNativeTarget "DitCo2Aftryk" */;
+			buildPhases = (
+				993624F72510A4E6002BF468 /* Sources */,
+				993624F82510A4E6002BF468 /* Frameworks */,
+				993624F92510A4E6002BF468 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DitCo2Aftryk;
+			productName = DitCo2Aftryk;
+			productReference = 993624FB2510A4E6002BF468 /* DitCo2Aftryk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		993625132510A4E7002BF468 /* DitCo2AftrykTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9936252B2510A4E7002BF468 /* Build configuration list for PBXNativeTarget "DitCo2AftrykTests" */;
+			buildPhases = (
+				993625102510A4E7002BF468 /* Sources */,
+				993625112510A4E7002BF468 /* Frameworks */,
+				993625122510A4E7002BF468 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				993625162510A4E7002BF468 /* PBXTargetDependency */,
+			);
+			name = DitCo2AftrykTests;
+			productName = DitCo2AftrykTests;
+			productReference = 993625142510A4E7002BF468 /* DitCo2AftrykTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9936251E2510A4E7002BF468 /* DitCo2AftrykUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9936252E2510A4E7002BF468 /* Build configuration list for PBXNativeTarget "DitCo2AftrykUITests" */;
+			buildPhases = (
+				9936251B2510A4E7002BF468 /* Sources */,
+				9936251C2510A4E7002BF468 /* Frameworks */,
+				9936251D2510A4E7002BF468 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				993625212510A4E7002BF468 /* PBXTargetDependency */,
+			);
+			name = DitCo2AftrykUITests;
+			productName = DitCo2AftrykUITests;
+			productReference = 9936251F2510A4E7002BF468 /* DitCo2AftrykUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		993624F32510A4E6002BF468 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1170;
+				ORGANIZATIONNAME = "Sacha Behrend";
+				TargetAttributes = {
+					993624FA2510A4E6002BF468 = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					993625132510A4E7002BF468 = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = 993624FA2510A4E6002BF468;
+					};
+					9936251E2510A4E7002BF468 = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = 993624FA2510A4E6002BF468;
+					};
+				};
+			};
+			buildConfigurationList = 993624F62510A4E6002BF468 /* Build configuration list for PBXProject "DitCo2Aftryk" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 993624F22510A4E6002BF468;
+			productRefGroup = 993624FC2510A4E6002BF468 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				993624FA2510A4E6002BF468 /* DitCo2Aftryk */,
+				993625132510A4E7002BF468 /* DitCo2AftrykTests */,
+				9936251E2510A4E7002BF468 /* DitCo2AftrykUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		993624F92510A4E6002BF468 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9936250E2510A4E7002BF468 /* LaunchScreen.storyboard in Resources */,
+				9936250B2510A4E7002BF468 /* Assets.xcassets in Resources */,
+				993625062510A4E6002BF468 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		993625122510A4E7002BF468 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9936251D2510A4E7002BF468 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		993624F72510A4E6002BF468 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				993625032510A4E6002BF468 /* ViewController.swift in Sources */,
+				993624FF2510A4E6002BF468 /* AppDelegate.swift in Sources */,
+				993625012510A4E6002BF468 /* SceneDelegate.swift in Sources */,
+				993625092510A4E6002BF468 /* DitCo2Aftryk.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		993625102510A4E7002BF468 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				993625192510A4E7002BF468 /* DitCo2AftrykTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9936251B2510A4E7002BF468 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				993625242510A4E7002BF468 /* DitCo2AftrykUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		993625162510A4E7002BF468 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 993624FA2510A4E6002BF468 /* DitCo2Aftryk */;
+			targetProxy = 993625152510A4E7002BF468 /* PBXContainerItemProxy */;
+		};
+		993625212510A4E7002BF468 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 993624FA2510A4E6002BF468 /* DitCo2Aftryk */;
+			targetProxy = 993625202510A4E7002BF468 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		993625042510A4E6002BF468 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				993625052510A4E6002BF468 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9936250C2510A4E7002BF468 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9936250D2510A4E7002BF468 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		993625262510A4E7002BF468 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		993625272510A4E7002BF468 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		993625292510A4E7002BF468 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G6TSQJ6DQ5;
+				INFOPLIST_FILE = DitCo2Aftryk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.snb.DitCo2Aftryk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9936252A2510A4E7002BF468 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G6TSQJ6DQ5;
+				INFOPLIST_FILE = DitCo2Aftryk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.snb.DitCo2Aftryk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9936252C2510A4E7002BF468 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G6TSQJ6DQ5;
+				INFOPLIST_FILE = DitCo2AftrykTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.snb.DitCo2AftrykTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DitCo2Aftryk.app/DitCo2Aftryk";
+			};
+			name = Debug;
+		};
+		9936252D2510A4E7002BF468 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G6TSQJ6DQ5;
+				INFOPLIST_FILE = DitCo2AftrykTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.snb.DitCo2AftrykTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DitCo2Aftryk.app/DitCo2Aftryk";
+			};
+			name = Release;
+		};
+		9936252F2510A4E7002BF468 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G6TSQJ6DQ5;
+				INFOPLIST_FILE = DitCo2AftrykUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.snb.DitCo2AftrykUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DitCo2Aftryk;
+			};
+			name = Debug;
+		};
+		993625302510A4E7002BF468 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G6TSQJ6DQ5;
+				INFOPLIST_FILE = DitCo2AftrykUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.snb.DitCo2AftrykUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DitCo2Aftryk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		993624F62510A4E6002BF468 /* Build configuration list for PBXProject "DitCo2Aftryk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				993625262510A4E7002BF468 /* Debug */,
+				993625272510A4E7002BF468 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		993625282510A4E7002BF468 /* Build configuration list for PBXNativeTarget "DitCo2Aftryk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				993625292510A4E7002BF468 /* Debug */,
+				9936252A2510A4E7002BF468 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9936252B2510A4E7002BF468 /* Build configuration list for PBXNativeTarget "DitCo2AftrykTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9936252C2510A4E7002BF468 /* Debug */,
+				9936252D2510A4E7002BF468 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9936252E2510A4E7002BF468 /* Build configuration list for PBXNativeTarget "DitCo2AftrykUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9936252F2510A4E7002BF468 /* Debug */,
+				993625302510A4E7002BF468 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		993625072510A4E6002BF468 /* DitCo2Aftryk.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				993625082510A4E6002BF468 /* DitCo2Aftryk.xcdatamodel */,
+			);
+			currentVersion = 993625082510A4E6002BF468 /* DitCo2Aftryk.xcdatamodel */;
+			path = DitCo2Aftryk.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 993624F32510A4E6002BF468 /* Project object */;
+}
