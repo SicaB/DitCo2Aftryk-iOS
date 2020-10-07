@@ -9,10 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var dayLabel: UILabel!
+    
+    @IBOutlet weak var co2Counter: UILabel!
+    
+    
+    @IBAction func enterCo2(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "select_co2_vc") as! SelectCo2ViewController
+       
+        present(vc, animated: true)
+    }
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("First commit!")
+        
     }
 
 

@@ -16,6 +16,7 @@
 		9936250E2510A4E7002BF468 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9936250C2510A4E7002BF468 /* LaunchScreen.storyboard */; };
 		993625192510A4E7002BF468 /* DitCo2AftrykTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625182510A4E7002BF468 /* DitCo2AftrykTests.swift */; };
 		993625242510A4E7002BF468 /* DitCo2AftrykUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625232510A4E7002BF468 /* DitCo2AftrykUITests.swift */; };
+		993625322510BFAF002BF468 /* SelectCo2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625312510BFAF002BF468 /* SelectCo2ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		9936251F2510A4E7002BF468 /* DitCo2AftrykUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DitCo2AftrykUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		993625232510A4E7002BF468 /* DitCo2AftrykUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DitCo2AftrykUITests.swift; sourceTree = "<group>"; };
 		993625252510A4E7002BF468 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		993625312510BFAF002BF468 /* SelectCo2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCo2ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				993624FE2510A4E6002BF468 /* AppDelegate.swift */,
 				993625002510A4E6002BF468 /* SceneDelegate.swift */,
 				993625022510A4E6002BF468 /* ViewController.swift */,
+				993625312510BFAF002BF468 /* SelectCo2ViewController.swift */,
 				993625042510A4E6002BF468 /* Main.storyboard */,
 				9936250A2510A4E7002BF468 /* Assets.xcassets */,
 				9936250C2510A4E7002BF468 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				993625322510BFAF002BF468 /* SelectCo2ViewController.swift in Sources */,
 				993625032510A4E6002BF468 /* ViewController.swift in Sources */,
 				993624FF2510A4E6002BF468 /* AppDelegate.swift in Sources */,
 				993625012510A4E6002BF468 /* SceneDelegate.swift in Sources */,
