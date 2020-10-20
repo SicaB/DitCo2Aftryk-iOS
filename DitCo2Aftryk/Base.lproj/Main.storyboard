@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fQ3-gF-GuH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="center" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="L0t-GW-znb">
-                                <rect key="frame" x="30" y="74" width="354" height="758"/>
+                                <rect key="frame" x="30" y="118" width="354" height="714"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I dag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdJ-uw-P3G">
                                         <rect key="frame" x="158.5" y="0.0" width="37.5" height="20.5"/>
@@ -39,13 +39,15 @@
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQW-d9-2Ur">
-                                        <rect key="frame" x="137" y="427" width="80" height="331"/>
+                                        <rect key="frame" x="137" y="427" width="80" height="287"/>
                                         <state key="normal" title="Indtast Co2"/>
                                         <connections>
                                             <action selector="enterCo2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gw1-95-6Yt"/>
+                                            <segue destination="H8o-3T-X8x" kind="show" identifier="ToSelectVC" id="GRw-78-yVe"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -57,35 +59,39 @@
                             <constraint firstItem="L0t-GW-znb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="pOV-Ak-fdw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="BTx-t0-9CB"/>
                     <connections>
                         <outlet property="co2Counter" destination="lOk-CN-jvg" id="lCL-pU-jTu"/>
                         <outlet property="dayLabel" destination="xdJ-uw-P3G" id="tFD-lY-BhL"/>
+                        <outlet property="enterCo2Btn" destination="AQW-d9-2Ur" id="LSt-Ef-fW6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-112" y="117"/>
+            <point key="canvasLocation" x="797.10144927536237" y="116.51785714285714"/>
         </scene>
-        <!--Select Co2 View Controller-->
+        <!--Vælg-->
         <scene sceneID="ctM-kr-dRl">
             <objects>
-                <viewController storyboardIdentifier="select_co2_vc" modalPresentationStyle="fullScreen" id="H8o-3T-X8x" customClass="SelectCo2ViewController" customModule="DitCo2Aftryk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="select_co2_vc" id="H8o-3T-X8x" customClass="SelectCo2ViewController" customModule="DitCo2Aftryk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qxn-4Z-eyC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="D1i-IX-GZb">
-                                <rect key="frame" x="30" y="194" width="354" height="638"/>
+                                <rect key="frame" x="30" y="148" width="354" height="684"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="left" axis="vertical" distribution="fillEqually" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="K97-RC-6eA">
-                                        <rect key="frame" x="0.0" y="0.0" width="170" height="638"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="684"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="carButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVC-xa-XMR">
-                                                <rect key="frame" x="0.0" y="0.0" width="170" height="148.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="170" height="160"/>
                                                 <color key="backgroundColor" name="BackgroundColorBtn"/>
-                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="tintColor" name="ColorIcon"/>
-                                                <state key="normal" image="car"/>
+                                                <state key="normal" title="Bil" image="car">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="15"/>
@@ -93,13 +99,15 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="carButtonCo2:" destination="H8o-3T-X8x" eventType="touchUpInside" id="4ka-sm-lRr"/>
+                                                    <segue destination="n17-GU-GC5" kind="show" identifier="ToCarVC" id="cCd-bs-8Zs"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kly-mv-Nrs">
-                                                <rect key="frame" x="0.0" y="163.5" width="170" height="148"/>
+                                                <rect key="frame" x="0.0" y="175" width="170" height="159.5"/>
                                                 <color key="backgroundColor" name="BackgroundColorBtn"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="tintColor" name="ColorIcon"/>
-                                                <state key="normal" image="bus"/>
+                                                <state key="normal" title="Bus" image="bus"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="15"/>
@@ -107,13 +115,15 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="busButtonCo2:" destination="H8o-3T-X8x" eventType="touchUpInside" id="eLX-Db-RBX"/>
+                                                    <segue destination="n17-GU-GC5" kind="show" identifier="ToBusVC" id="5Ez-qa-tT1"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVS-Cd-kw6">
-                                                <rect key="frame" x="0.0" y="326.5" width="170" height="148.5"/>
+                                                <rect key="frame" x="0.0" y="349.5" width="170" height="160"/>
                                                 <color key="backgroundColor" name="BackgroundColorBtn"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="tintColor" name="ColorIcon"/>
-                                                <state key="normal" image="train"/>
+                                                <state key="normal" title="Tog" image="train"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="15"/>
@@ -121,13 +131,14 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="trainButtonCo2:" destination="H8o-3T-X8x" eventType="touchUpInside" id="1oy-EK-hTf"/>
+                                                    <segue destination="n17-GU-GC5" kind="show" identifier="ToTrainVC" id="sM5-oz-8Bg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25a-T1-gAd">
-                                                <rect key="frame" x="0.0" y="490" width="170" height="148"/>
+                                                <rect key="frame" x="0.0" y="524.5" width="170" height="159.5"/>
                                                 <color key="backgroundColor" name="BackgroundColorBtn"/>
                                                 <color key="tintColor" name="ColorIcon"/>
-                                                <state key="normal" image="airplane"/>
+                                                <state key="normal" title="Fly" image="airplane"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="15"/>
@@ -135,6 +146,7 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="planeButtonCo2:" destination="H8o-3T-X8x" eventType="touchUpInside" id="KZN-jV-qT8"/>
+                                                    <segue destination="n17-GU-GC5" kind="show" identifier="ToPlaneVC" id="x5v-TH-oFv"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -146,13 +158,15 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="right" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xgX-PG-Zk9">
-                                        <rect key="frame" x="184" y="0.0" width="170" height="638"/>
+                                        <rect key="frame" x="184" y="0.0" width="170" height="684"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qW1-mE-vAM">
-                                                <rect key="frame" x="0.0" y="0.0" width="170" height="148.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="170" height="160"/>
                                                 <color key="backgroundColor" name="BackgroundColorBtn"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="tintColor" name="ColorIcon"/>
-                                                <state key="normal" image="clothes"/>
+                                                <inset key="titleEdgeInsets" minX="0.0" minY="80" maxX="50" maxY="0.0"/>
+                                                <state key="normal" title="Tøj" image="clothes"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="15"/>
@@ -160,13 +174,15 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="clothesButtonCo2:" destination="H8o-3T-X8x" eventType="touchUpInside" id="fHf-H9-gYQ"/>
+                                                    <segue destination="n17-GU-GC5" kind="show" identifier="ToClothesVC" id="Cd3-79-0GG"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5b-sq-7Ei">
-                                                <rect key="frame" x="0.0" y="163.5" width="170" height="148"/>
+                                                <rect key="frame" x="0.0" y="175" width="170" height="159.5"/>
                                                 <color key="backgroundColor" name="BackgroundColorBtn"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="tintColor" name="ColorIcon"/>
-                                                <state key="normal" image="meat"/>
+                                                <state key="normal" title="Kød" image="meat"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="15"/>
@@ -174,13 +190,15 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="meatButtonCo2:" destination="H8o-3T-X8x" eventType="touchUpInside" id="ogf-MR-GUO"/>
+                                                    <segue destination="n17-GU-GC5" kind="show" identifier="ToMeatVC" id="PT6-Go-P5d"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkA-AV-Bpx">
-                                                <rect key="frame" x="0.0" y="326.5" width="170" height="148.5"/>
+                                                <rect key="frame" x="0.0" y="349.5" width="170" height="160"/>
                                                 <color key="backgroundColor" name="BackgroundColorBtn"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="tintColor" name="ColorIcon"/>
-                                                <state key="normal" image="el"/>
+                                                <state key="normal" title="El" image="el"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="15"/>
@@ -188,13 +206,15 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="elButtonCo2:" destination="H8o-3T-X8x" eventType="touchUpInside" id="xls-hI-3zZ"/>
+                                                    <segue destination="n17-GU-GC5" kind="show" identifier="ToElVC" id="ahW-fm-fdS"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfg-sN-TPz">
-                                                <rect key="frame" x="0.0" y="490" width="170" height="148"/>
+                                                <rect key="frame" x="0.0" y="524.5" width="170" height="159.5"/>
                                                 <color key="backgroundColor" name="BackgroundColorBtn"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="tintColor" name="ColorIcon"/>
-                                                <state key="normal" image="heating"/>
+                                                <state key="normal" title="Varme" image="heating"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="15"/>
@@ -202,6 +222,7 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="heatingButtonCo2:" destination="H8o-3T-X8x" eventType="touchUpInside" id="Dsb-Qz-znW"/>
+                                                    <segue destination="n17-GU-GC5" kind="show" identifier="ToHeatVC" id="Asu-cP-rEk"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -216,23 +237,17 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vælg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Dw-6A-J8L">
-                                <rect key="frame" x="0.0" y="44" width="414" height="90"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" name="ColorIcon"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Kk7-G8-wDw">
-                                <rect key="frame" x="30" y="154" width="354" height="25"/>
+                                <rect key="frame" x="30" y="109" width="354" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEQ-Df-mq8">
-                                        <rect key="frame" x="0.0" y="0.0" width="177" height="25"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forbrug" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqh-fY-ZRq">
-                                        <rect key="frame" x="177" y="0.0" width="177" height="25"/>
+                                        <rect key="frame" x="177" y="0.0" width="177" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -244,19 +259,15 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="USe-IG-J8G" firstAttribute="bottom" secondItem="D1i-IX-GZb" secondAttribute="bottom" constant="30" id="3dB-Ph-ZKu"/>
-                            <constraint firstItem="4Dw-6A-J8L" firstAttribute="top" secondItem="USe-IG-J8G" secondAttribute="top" id="5bM-S3-eON"/>
                             <constraint firstItem="D1i-IX-GZb" firstAttribute="leading" secondItem="USe-IG-J8G" secondAttribute="leading" constant="30" id="FnA-yL-dMR"/>
-                            <constraint firstItem="D1i-IX-GZb" firstAttribute="top" secondItem="USe-IG-J8G" secondAttribute="top" constant="150" id="GFp-SA-M4f"/>
-                            <constraint firstItem="4Dw-6A-J8L" firstAttribute="leading" secondItem="USe-IG-J8G" secondAttribute="leading" id="PPN-mz-JJx"/>
+                            <constraint firstItem="D1i-IX-GZb" firstAttribute="top" secondItem="USe-IG-J8G" secondAttribute="top" constant="60" id="GFp-SA-M4f"/>
                             <constraint firstItem="Kk7-G8-wDw" firstAttribute="leading" secondItem="USe-IG-J8G" secondAttribute="leading" constant="30" id="XRO-Wi-BMB"/>
                             <constraint firstItem="USe-IG-J8G" firstAttribute="trailing" secondItem="Kk7-G8-wDw" secondAttribute="trailing" constant="30" id="aHL-fA-oCk"/>
-                            <constraint firstItem="D1i-IX-GZb" firstAttribute="top" secondItem="4Dw-6A-J8L" secondAttribute="bottom" constant="60" id="e8X-LJ-GLG"/>
                             <constraint firstItem="D1i-IX-GZb" firstAttribute="top" secondItem="Kk7-G8-wDw" secondAttribute="bottom" constant="15" id="ivu-WL-d2K"/>
                             <constraint firstItem="USe-IG-J8G" firstAttribute="trailing" secondItem="D1i-IX-GZb" secondAttribute="trailing" constant="30" id="m4s-kw-lii"/>
-                            <constraint firstItem="USe-IG-J8G" firstAttribute="trailing" secondItem="4Dw-6A-J8L" secondAttribute="trailing" id="nqO-qO-GMe"/>
-                            <constraint firstItem="Kk7-G8-wDw" firstAttribute="top" secondItem="4Dw-6A-J8L" secondAttribute="bottom" constant="20" id="q6B-lc-iQR"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Vælg" id="8YC-7t-3xw"/>
                     <connections>
                         <outlet property="busButton" destination="kly-mv-Nrs" id="pYx-Iv-ZZT"/>
                         <outlet property="carButton" destination="yVC-xa-XMR" id="lt1-N7-xbA"/>
@@ -270,9 +281,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0z-TJ-LMp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="598.55072463768124" y="116.51785714285714"/>
+            <point key="canvasLocation" x="1508.6956521739132" y="116.51785714285714"/>
+        </scene>
+        <!--Parent Co2 InputVC-->
+        <scene sceneID="1I7-1t-F8U">
+            <objects>
+                <viewController id="n17-GU-GC5" customClass="ParentCo2InputVC" customModule="DitCo2Aftryk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nkf-ML-zA4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8sB-YN-NOV"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lbx-BU-YO2">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="sod-YJ-AvO">
+                            <rect key="frame" x="141.5" y="6" width="131" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="First"/>
+                                <segment title="Second"/>
+                            </segments>
+                            <connections>
+                                <action selector="didTapSegmentWithSegment:" destination="n17-GU-GC5" eventType="valueChanged" id="4Gy-ka-hoT"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ib3-pt-g96" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2375" y="117"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oEH-Ke-BQv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fQ3-gF-GuH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="blackTranslucent" id="Kaf-nY-ARq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="ColorIcon"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="maQ-5t-Dv1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e3n-0b-WYG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-113.04347826086958" y="116.51785714285714"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="cCd-bs-8Zs"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="airplane" width="100" height="100"/>
         <image name="bus" width="100" height="100"/>
@@ -283,10 +349,10 @@
         <image name="meat" width="100" height="100"/>
         <image name="train" width="100" height="100"/>
         <namedColor name="BackgroundColorBtn">
-            <color red="0.12920251490000001" green="0.13743844629999999" blue="0.12915331129999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.1289999932050705" green="0.13699999451637268" blue="0.1289999932050705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ColorIcon">
-            <color red="0.44046137402369806" green="0.77234741253989636" blue="0.4089570718064624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.43999999761581421" green="0.7720000147819519" blue="0.40900000929832458" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
