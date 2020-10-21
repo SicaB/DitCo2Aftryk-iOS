@@ -20,6 +20,12 @@
 		99CD0675253ED99600486BC0 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD0674253ED99600486BC0 /* CarViewController.swift */; };
 		99CD067D253EEF3D00486BC0 /* ParentCo2InputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD067C253EEF3D00486BC0 /* ParentCo2InputVC.swift */; };
 		99CD0685253EF4AA00486BC0 /* ClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD0684253EF4AA00486BC0 /* ClothesViewController.swift */; };
+		99CD068D254035A900486BC0 /* BusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD068C254035A900486BC0 /* BusViewController.swift */; };
+		99CD069525405F9D00486BC0 /* MeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD069425405F9D00486BC0 /* MeatViewController.swift */; };
+		99CD069A25405FAD00486BC0 /* TrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD069925405FAD00486BC0 /* TrainViewController.swift */; };
+		99CD069F25405FBC00486BC0 /* ElViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD069E25405FBC00486BC0 /* ElViewController.swift */; };
+		99CD06A425405FCB00486BC0 /* PlaneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD06A325405FCB00486BC0 /* PlaneViewController.swift */; };
+		99CD06A925405FDA00486BC0 /* HeatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD06A825405FDA00486BC0 /* HeatingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +65,12 @@
 		99CD0674253ED99600486BC0 /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
 		99CD067C253EEF3D00486BC0 /* ParentCo2InputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentCo2InputVC.swift; sourceTree = "<group>"; };
 		99CD0684253EF4AA00486BC0 /* ClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesViewController.swift; sourceTree = "<group>"; };
+		99CD068C254035A900486BC0 /* BusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusViewController.swift; sourceTree = "<group>"; };
+		99CD069425405F9D00486BC0 /* MeatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeatViewController.swift; sourceTree = "<group>"; };
+		99CD069925405FAD00486BC0 /* TrainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewController.swift; sourceTree = "<group>"; };
+		99CD069E25405FBC00486BC0 /* ElViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElViewController.swift; sourceTree = "<group>"; };
+		99CD06A325405FCB00486BC0 /* PlaneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneViewController.swift; sourceTree = "<group>"; };
+		99CD06A825405FDA00486BC0 /* HeatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +128,12 @@
 				99CD067C253EEF3D00486BC0 /* ParentCo2InputVC.swift */,
 				99CD0674253ED99600486BC0 /* CarViewController.swift */,
 				99CD0684253EF4AA00486BC0 /* ClothesViewController.swift */,
+				99CD068C254035A900486BC0 /* BusViewController.swift */,
+				99CD069425405F9D00486BC0 /* MeatViewController.swift */,
+				99CD069925405FAD00486BC0 /* TrainViewController.swift */,
+				99CD069E25405FBC00486BC0 /* ElViewController.swift */,
+				99CD06A325405FCB00486BC0 /* PlaneViewController.swift */,
+				99CD06A825405FDA00486BC0 /* HeatingViewController.swift */,
 				993625042510A4E6002BF468 /* Main.storyboard */,
 				9936250A2510A4E7002BF468 /* Assets.xcassets */,
 				9936250C2510A4E7002BF468 /* LaunchScreen.storyboard */,
@@ -274,14 +292,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99CD069A25405FAD00486BC0 /* TrainViewController.swift in Sources */,
+				99CD069F25405FBC00486BC0 /* ElViewController.swift in Sources */,
 				99CD067D253EEF3D00486BC0 /* ParentCo2InputVC.swift in Sources */,
+				99CD06A925405FDA00486BC0 /* HeatingViewController.swift in Sources */,
 				993625322510BFAF002BF468 /* SelectCo2ViewController.swift in Sources */,
 				99CD0675253ED99600486BC0 /* CarViewController.swift in Sources */,
+				99CD069525405F9D00486BC0 /* MeatViewController.swift in Sources */,
 				993625032510A4E6002BF468 /* ViewController.swift in Sources */,
 				993624FF2510A4E6002BF468 /* AppDelegate.swift in Sources */,
 				993625012510A4E6002BF468 /* SceneDelegate.swift in Sources */,
+				99CD06A425405FCB00486BC0 /* PlaneViewController.swift in Sources */,
 				993625092510A4E6002BF468 /* DitCo2Aftryk.xcdatamodeld in Sources */,
 				99CD0685253EF4AA00486BC0 /* ClothesViewController.swift in Sources */,
+				99CD068D254035A900486BC0 /* BusViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
