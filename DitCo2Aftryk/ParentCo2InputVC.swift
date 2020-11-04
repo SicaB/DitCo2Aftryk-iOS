@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialTextControls_FilledTextAreas
+import MaterialComponents.MaterialTextControls_FilledTextFields
+import MaterialComponents.MaterialTextControls_OutlinedTextAreas
+import MaterialComponents.MaterialTextControls_OutlinedTextFields
 
 class ParentCo2InputVC: UIViewController {
     
@@ -23,11 +27,16 @@ class ParentCo2InputVC: UIViewController {
     @IBOutlet weak var containerViewPlane: UIView!
     @IBOutlet weak var containerViewHeating: UIView!
     
+    var id: Int!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectedSegment()
+        
+        hideAllContainerViews()
+        
+        selectedSegment(indexNumber: id)
+        
         
         if #available(iOS 13.0, *) {
             segmentedControl.layer.borderColor = UIColor(named: "ImageGreen")?.cgColor
@@ -35,39 +44,53 @@ class ParentCo2InputVC: UIViewController {
             
             let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
             segmentedControl.setTitleTextAttributes(titleTextAttributes, for: .normal)
-            
-            hideAllContainerViews()
-            
-//            let titleTextAttributes1 = [NSAttributedString.Key.foregroundColor: UIColor.black]
-//            segmentedControl.setTitleTextAttributes(titleTextAttributes1, for: .selected)
+
             
         }
         
 
     }
     
-    
-    private func selectedSegment() {
+    func addTextField(textField: MDCOutlinedTextField, view: UIView, hight: Int){
         
+        let textFieldFrame = CGRect(x: 0, y: 0, width: Int(view.frame.width) - 140, height: hight)
+        
+        textField.frame = textFieldFrame
+       
+        textField.setTextColor(.white, for: .editing)
+        textField.setTextColor(.white, for: .normal)
+        textField.setFloatingLabelColor(.white, for: .editing)
+        textField.setFloatingLabelColor(.white, for: .disabled)
+        textField.setFloatingLabelColor(.white, for: .normal)
+        textField.setNormalLabelColor(.white, for: .normal)
+        textField.setNormalLabelColor(.white, for: .disabled)
+        textField.setNormalLabelColor(.white, for: .editing)
+        textField.setOutlineColor(.white, for: .normal)
+        textField.setOutlineColor(.white, for: .editing)
+        textField.setOutlineColor(.white, for: .disabled)
+        textField.keyboardType = .decimalPad
+
+        textField.trailingViewMode = .whileEditing
+        
+        let clearButton = textField.value(forKey: "clearButton") as! UIButton
+        clearButton.setImage(clearButton.imageView?.image?.withRenderingMode(.alwaysTemplate), for: .normal)
+        clearButton.tintColor = UIColor.white
+        
+        textField.clearButtonMode = .whileEditing
+        textField.tintColor = .white
+        textField.center = view.center
+        textField.sizeToFit()
+        view.addSubview(textField)
+    
+        
+          
     }
     
-    private func hideAllContainerViews(){
-        containerViewCar.alpha = 0
-        containerViewClothes.alpha = 0
-        containerViewBus.alpha = 0
-        containerViewMeat.alpha = 0
-        containerViewTrain.alpha = 0
-        containerViewEl.alpha = 0
-        containerViewPlane.alpha = 0
-        containerViewHeating.alpha = 0
-    }
     
     
-    @IBAction func didTapSegment(_ sender: UISegmentedControl) {
-        
-        hideAllContainerViews()
-        
-        let indexNumber = sender.selectedSegmentIndex
+    
+    private func selectedSegment(indexNumber: Int) {
+        print(indexNumber)
         
         switch indexNumber {
         case 0:
@@ -90,16 +113,31 @@ class ParentCo2InputVC: UIViewController {
             print("containerError")
         }
         
-//        if sender.selectedSegmentIndex == 0 {
-//            containerViewCar.alpha = 1
-//            containerViewClothes.alpha = 0
-//        }
-//        else {
-//            containerViewCar.alpha = 0
-//            containerViewClothes.alpha = 1
-//
-//        }
+        segmentedControl.selectedSegmentIndex = indexNumber
+        
     }
     
-
+    private func hideAllContainerViews(){
+        containerViewCar.alpha = 0
+        containerViewClothes.alpha = 0
+        containerViewBus.alpha = 0
+        containerViewMeat.alpha = 0
+        containerViewTrain.alpha = 0
+        containerViewEl.alpha = 0
+        containerViewPlane.alpha = 0
+        containerViewHeating.alpha = 0
+    }
+    
+    
+    @IBAction func didTapSegment(_ sender: UISegmentedControl) {
+        
+        hideAllContainerViews()
+        
+        let indexNumber = sender.selectedSegmentIndex
+        
+        selectedSegment(indexNumber: indexNumber)
+        
+        
+    }
+    
 }

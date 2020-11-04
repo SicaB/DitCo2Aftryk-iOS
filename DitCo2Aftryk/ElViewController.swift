@@ -7,24 +7,59 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialTextControls_FilledTextAreas
+import MaterialComponents.MaterialTextControls_FilledTextFields
+import MaterialComponents.MaterialTextControls_OutlinedTextAreas
+import MaterialComponents.MaterialTextControls_OutlinedTextFields
 
 class ElViewController: UIViewController {
 
+    
+    @IBOutlet weak var elSaveCo2Btn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setup()
     }
     
+    private func setup() {
+        
+        let topGradientColor = UIColor(named: "HighlightGreen")
+             
+        let bottomGradientColor = UIColor(named: "DarkGreen")
 
-    /*
-    // MARK: - Navigation
+        let gradientLayer = CAGradientLayer()
+        
+        gradientLayer.frame = elSaveCo2Btn.bounds
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        gradientLayer.colors = [topGradientColor?.cgColor ?? UIColor.blue, bottomGradientColor?.cgColor ?? UIColor.green]
+
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
+
+        gradientLayer.locations = [0.0, 1.0]
+
+        elSaveCo2Btn.layer.insertSublayer(gradientLayer, at: 0)
+        
+        elSaveCo2Btn.layer.cornerRadius = 6
+        elSaveCo2Btn.layer.masksToBounds = true
+        elSaveCo2Btn.layer.borderWidth = 1.0
+        elSaveCo2Btn.layer.borderColor = UIColor(named: "DarkGreen")?.cgColor
+    
+
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tapGesture)
+    
+       let elTextField = MDCOutlinedTextField()
+       
+        elTextField.label.text = "Antal kWh"
+        
+        // Add material textfield to the ui
+        ParentCo2InputVC().addTextField(textField: elTextField, view: self.view, hight: 350)
+
+        
     }
-    */
+
 
 }

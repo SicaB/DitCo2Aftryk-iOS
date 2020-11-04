@@ -101,6 +101,8 @@ class SelectCo2ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        var id = 0
+        
         guard let identifier = segue.identifier else {
             assertionFailure("Segue has no identifier")
             return
@@ -108,16 +110,45 @@ class SelectCo2ViewController: UIViewController {
         
         switch identifier {
         case "ToCarVC":
-            print("identifier car")
+            id = 0
+            print("identifier car \(id)")
             
         case "ToClothesVC":
-            print("identifier clothes")
-        
+            id = 1
+            print("identifier clothes \(id)")
+            
+        case "ToBusVC":
+            id = 2
+            print("identifier bus \(id)")
+            
+        case "ToMeatVC":
+            id = 3
+            print("identifier meat \(id)")
+            
+        case "ToTrainVC":
+            id = 4
+            print("identifier train \(id)")
+            
+        case "ToElVC":
+            id = 5
+            print("identifier el \(id)")
+            
+        case "ToPlaneVC":
+            id = 6
+            print("identifier plane \(id)")
+            
+        case "ToHeatingVC":
+            id = 7
+            print("identifier heating \(id)")
+            
         default:
             assertionFailure("did not recognize storyboard identifier")
             
             
         }
+        
+        let parentCo2InputVC = (segue.destination as! ParentCo2InputVC)
+        parentCo2InputVC.id = id
     }
     
 

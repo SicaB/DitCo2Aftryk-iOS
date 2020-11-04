@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		238DF36F09C51F5E8AAB74B5 /* Pods_DitCo2AftrykTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C629D9398EC1DD71EDD4D9F /* Pods_DitCo2AftrykTests.framework */; };
+		3090D39D3CD7A54955737EE8 /* Pods_DitCo2Aftryk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A43BF4DD7BE5752062DD36 /* Pods_DitCo2Aftryk.framework */; };
+		6C24C45ED7413AD931F6AE6A /* Pods_DitCo2Aftryk_DitCo2AftrykUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF5FC16E259FAA6BE2C1B89 /* Pods_DitCo2Aftryk_DitCo2AftrykUITests.framework */; };
+		992FF4722552E3B1004BFB66 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992FF4712552E3B0004BFB66 /* CircularProgressBar.swift */; };
 		993624FF2510A4E6002BF468 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993624FE2510A4E6002BF468 /* AppDelegate.swift */; };
 		993625012510A4E6002BF468 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625002510A4E6002BF468 /* SceneDelegate.swift */; };
 		993625032510A4E6002BF468 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625022510A4E6002BF468 /* ViewController.swift */; };
@@ -46,6 +50,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		092A2340521E84D836265589 /* Pods-DitCo2Aftryk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DitCo2Aftryk.debug.xcconfig"; path = "Target Support Files/Pods-DitCo2Aftryk/Pods-DitCo2Aftryk.debug.xcconfig"; sourceTree = "<group>"; };
+		1BF5FC16E259FAA6BE2C1B89 /* Pods_DitCo2Aftryk_DitCo2AftrykUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DitCo2Aftryk_DitCo2AftrykUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		221FE9590FE5355AA5033333 /* Pods-DitCo2AftrykTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DitCo2AftrykTests.debug.xcconfig"; path = "Target Support Files/Pods-DitCo2AftrykTests/Pods-DitCo2AftrykTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2C629D9398EC1DD71EDD4D9F /* Pods_DitCo2AftrykTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DitCo2AftrykTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4379774CF46B035B8B689712 /* Pods-DitCo2Aftryk-DitCo2AftrykUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DitCo2Aftryk-DitCo2AftrykUITests.debug.xcconfig"; path = "Target Support Files/Pods-DitCo2Aftryk-DitCo2AftrykUITests/Pods-DitCo2Aftryk-DitCo2AftrykUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		83A43BF4DD7BE5752062DD36 /* Pods_DitCo2Aftryk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DitCo2Aftryk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		992FF4712552E3B0004BFB66 /* CircularProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircularProgressBar.swift; path = "../../../Downloads/d73ad00eed7b3b55784c0d24e9852332-860c72ddd58a70604f3defb40c15d063341aa609/CircularProgressBar.swift"; sourceTree = "<group>"; };
 		993624FB2510A4E6002BF468 /* DitCo2Aftryk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DitCo2Aftryk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		993624FE2510A4E6002BF468 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		993625002510A4E6002BF468 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,11 +77,14 @@
 		99CD067C253EEF3D00486BC0 /* ParentCo2InputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentCo2InputVC.swift; sourceTree = "<group>"; };
 		99CD0684253EF4AA00486BC0 /* ClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesViewController.swift; sourceTree = "<group>"; };
 		99CD068C254035A900486BC0 /* BusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusViewController.swift; sourceTree = "<group>"; };
-		99CD069425405F9D00486BC0 /* MeatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeatViewController.swift; sourceTree = "<group>"; };
+		99CD069425405F9D00486BC0 /* MeatViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = MeatViewController.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
 		99CD069925405FAD00486BC0 /* TrainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewController.swift; sourceTree = "<group>"; };
 		99CD069E25405FBC00486BC0 /* ElViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElViewController.swift; sourceTree = "<group>"; };
 		99CD06A325405FCB00486BC0 /* PlaneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneViewController.swift; sourceTree = "<group>"; };
 		99CD06A825405FDA00486BC0 /* HeatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatingViewController.swift; sourceTree = "<group>"; };
+		9FF23821A9548B73F345E385 /* Pods-DitCo2Aftryk-DitCo2AftrykUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DitCo2Aftryk-DitCo2AftrykUITests.release.xcconfig"; path = "Target Support Files/Pods-DitCo2Aftryk-DitCo2AftrykUITests/Pods-DitCo2Aftryk-DitCo2AftrykUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D166AF888071975C5E4804E4 /* Pods-DitCo2AftrykTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DitCo2AftrykTests.release.xcconfig"; path = "Target Support Files/Pods-DitCo2AftrykTests/Pods-DitCo2AftrykTests.release.xcconfig"; sourceTree = "<group>"; };
+		F6C44BFEA6C9C4898C8A0667 /* Pods-DitCo2Aftryk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DitCo2Aftryk.release.xcconfig"; path = "Target Support Files/Pods-DitCo2Aftryk/Pods-DitCo2Aftryk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3090D39D3CD7A54955737EE8 /* Pods_DitCo2Aftryk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				238DF36F09C51F5E8AAB74B5 /* Pods_DitCo2AftrykTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,12 +108,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C24C45ED7413AD931F6AE6A /* Pods_DitCo2Aftryk_DitCo2AftrykUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C0F6336BEB847C09B3942BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83A43BF4DD7BE5752062DD36 /* Pods_DitCo2Aftryk.framework */,
+				1BF5FC16E259FAA6BE2C1B89 /* Pods_DitCo2Aftryk_DitCo2AftrykUITests.framework */,
+				2C629D9398EC1DD71EDD4D9F /* Pods_DitCo2AftrykTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		993624F22510A4E6002BF468 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +132,8 @@
 				993625172510A4E7002BF468 /* DitCo2AftrykTests */,
 				993625222510A4E7002BF468 /* DitCo2AftrykUITests */,
 				993624FC2510A4E6002BF468 /* Products */,
+				D812FAE5A8ADDDF9E0B70CFF /* Pods */,
+				5C0F6336BEB847C09B3942BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +153,7 @@
 				993624FE2510A4E6002BF468 /* AppDelegate.swift */,
 				993625002510A4E6002BF468 /* SceneDelegate.swift */,
 				993625022510A4E6002BF468 /* ViewController.swift */,
+				992FF4712552E3B0004BFB66 /* CircularProgressBar.swift */,
 				993625312510BFAF002BF468 /* SelectCo2ViewController.swift */,
 				99CD067C253EEF3D00486BC0 /* ParentCo2InputVC.swift */,
 				99CD0674253ED99600486BC0 /* CarViewController.swift */,
@@ -161,6 +191,19 @@
 			path = DitCo2AftrykUITests;
 			sourceTree = "<group>";
 		};
+		D812FAE5A8ADDDF9E0B70CFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				092A2340521E84D836265589 /* Pods-DitCo2Aftryk.debug.xcconfig */,
+				F6C44BFEA6C9C4898C8A0667 /* Pods-DitCo2Aftryk.release.xcconfig */,
+				4379774CF46B035B8B689712 /* Pods-DitCo2Aftryk-DitCo2AftrykUITests.debug.xcconfig */,
+				9FF23821A9548B73F345E385 /* Pods-DitCo2Aftryk-DitCo2AftrykUITests.release.xcconfig */,
+				221FE9590FE5355AA5033333 /* Pods-DitCo2AftrykTests.debug.xcconfig */,
+				D166AF888071975C5E4804E4 /* Pods-DitCo2AftrykTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -168,9 +211,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 993625282510A4E7002BF468 /* Build configuration list for PBXNativeTarget "DitCo2Aftryk" */;
 			buildPhases = (
+				6A0F715F8751D23F3AF8CB3F /* [CP] Check Pods Manifest.lock */,
 				993624F72510A4E6002BF468 /* Sources */,
 				993624F82510A4E6002BF468 /* Frameworks */,
 				993624F92510A4E6002BF468 /* Resources */,
+				A6A42C16A9A792871D3C7F3D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,6 +230,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9936252B2510A4E7002BF468 /* Build configuration list for PBXNativeTarget "DitCo2AftrykTests" */;
 			buildPhases = (
+				66CA5C34C35BA8CC555F606C /* [CP] Check Pods Manifest.lock */,
 				993625102510A4E7002BF468 /* Sources */,
 				993625112510A4E7002BF468 /* Frameworks */,
 				993625122510A4E7002BF468 /* Resources */,
@@ -203,9 +249,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9936252E2510A4E7002BF468 /* Build configuration list for PBXNativeTarget "DitCo2AftrykUITests" */;
 			buildPhases = (
+				FD812957C6626113839925D0 /* [CP] Check Pods Manifest.lock */,
 				9936251B2510A4E7002BF468 /* Sources */,
 				9936251C2510A4E7002BF468 /* Frameworks */,
 				9936251D2510A4E7002BF468 /* Resources */,
+				E9E836D388CF817BF52D6983 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -224,7 +272,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Sacha Behrend";
 				TargetAttributes = {
 					993624FA2510A4E6002BF468 = {
@@ -287,6 +335,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		66CA5C34C35BA8CC555F606C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DitCo2AftrykTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A0F715F8751D23F3AF8CB3F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DitCo2Aftryk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6A42C16A9A792871D3C7F3D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DitCo2Aftryk/Pods-DitCo2Aftryk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DitCo2Aftryk/Pods-DitCo2Aftryk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DitCo2Aftryk/Pods-DitCo2Aftryk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9E836D388CF817BF52D6983 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DitCo2Aftryk-DitCo2AftrykUITests/Pods-DitCo2Aftryk-DitCo2AftrykUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DitCo2Aftryk-DitCo2AftrykUITests/Pods-DitCo2Aftryk-DitCo2AftrykUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DitCo2Aftryk-DitCo2AftrykUITests/Pods-DitCo2Aftryk-DitCo2AftrykUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD812957C6626113839925D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DitCo2Aftryk-DitCo2AftrykUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		993624F72510A4E6002BF468 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -306,6 +457,7 @@
 				993625092510A4E6002BF468 /* DitCo2Aftryk.xcdatamodeld in Sources */,
 				99CD0685253EF4AA00486BC0 /* ClothesViewController.swift in Sources */,
 				99CD068D254035A900486BC0 /* BusViewController.swift in Sources */,
+				992FF4722552E3B1004BFB66 /* CircularProgressBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +538,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -446,6 +599,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -476,6 +630,7 @@
 		};
 		993625292510A4E7002BF468 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 092A2340521E84D836265589 /* Pods-DitCo2Aftryk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -494,6 +649,7 @@
 		};
 		9936252A2510A4E7002BF468 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6C44BFEA6C9C4898C8A0667 /* Pods-DitCo2Aftryk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -512,6 +668,7 @@
 		};
 		9936252C2510A4E7002BF468 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 221FE9590FE5355AA5033333 /* Pods-DitCo2AftrykTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -534,6 +691,7 @@
 		};
 		9936252D2510A4E7002BF468 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D166AF888071975C5E4804E4 /* Pods-DitCo2AftrykTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -556,6 +714,7 @@
 		};
 		9936252F2510A4E7002BF468 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4379774CF46B035B8B689712 /* Pods-DitCo2Aftryk-DitCo2AftrykUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -576,6 +735,7 @@
 		};
 		993625302510A4E7002BF468 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FF23821A9548B73F345E385 /* Pods-DitCo2Aftryk-DitCo2AftrykUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
