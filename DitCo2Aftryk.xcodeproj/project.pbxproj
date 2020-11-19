@@ -11,18 +11,23 @@
 		3090D39D3CD7A54955737EE8 /* Pods_DitCo2Aftryk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A43BF4DD7BE5752062DD36 /* Pods_DitCo2Aftryk.framework */; };
 		6C24C45ED7413AD931F6AE6A /* Pods_DitCo2Aftryk_DitCo2AftrykUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF5FC16E259FAA6BE2C1B89 /* Pods_DitCo2Aftryk_DitCo2AftrykUITests.framework */; };
 		992FF4722552E3B1004BFB66 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992FF4712552E3B0004BFB66 /* CircularProgressBar.swift */; };
+		992FF4892553471B004BFB66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 992FF4882553471B004BFB66 /* GoogleService-Info.plist */; };
+		992FF4EA2559632B004BFB66 /* DBFirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992FF4E92559632B004BFB66 /* DBFirestoreService.swift */; };
+		992FF4EF25597C5C004BFB66 /* Co2InputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992FF4EE25597C5C004BFB66 /* Co2InputData.swift */; };
+		992FF506255D30F0004BFB66 /* DailyCo2Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992FF505255D30F0004BFB66 /* DailyCo2Count.swift */; };
+		992FF50B255D352A004BFB66 /* SnapshotExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992FF50A255D352A004BFB66 /* SnapshotExtensions.swift */; };
 		993624FF2510A4E6002BF468 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993624FE2510A4E6002BF468 /* AppDelegate.swift */; };
 		993625012510A4E6002BF468 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625002510A4E6002BF468 /* SceneDelegate.swift */; };
-		993625032510A4E6002BF468 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625022510A4E6002BF468 /* ViewController.swift */; };
+		993625032510A4E6002BF468 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625022510A4E6002BF468 /* HomeViewController.swift */; };
 		993625062510A4E6002BF468 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 993625042510A4E6002BF468 /* Main.storyboard */; };
 		993625092510A4E6002BF468 /* DitCo2Aftryk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 993625072510A4E6002BF468 /* DitCo2Aftryk.xcdatamodeld */; };
 		9936250B2510A4E7002BF468 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9936250A2510A4E7002BF468 /* Assets.xcassets */; };
 		9936250E2510A4E7002BF468 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9936250C2510A4E7002BF468 /* LaunchScreen.storyboard */; };
 		993625192510A4E7002BF468 /* DitCo2AftrykTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625182510A4E7002BF468 /* DitCo2AftrykTests.swift */; };
 		993625242510A4E7002BF468 /* DitCo2AftrykUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625232510A4E7002BF468 /* DitCo2AftrykUITests.swift */; };
-		993625322510BFAF002BF468 /* SelectCo2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625312510BFAF002BF468 /* SelectCo2ViewController.swift */; };
+		993625322510BFAF002BF468 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625312510BFAF002BF468 /* MenuViewController.swift */; };
 		99CD0675253ED99600486BC0 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD0674253ED99600486BC0 /* CarViewController.swift */; };
-		99CD067D253EEF3D00486BC0 /* ParentCo2InputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD067C253EEF3D00486BC0 /* ParentCo2InputVC.swift */; };
+		99CD067D253EEF3D00486BC0 /* ParentInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD067C253EEF3D00486BC0 /* ParentInputViewController.swift */; };
 		99CD0685253EF4AA00486BC0 /* ClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD0684253EF4AA00486BC0 /* ClothesViewController.swift */; };
 		99CD068D254035A900486BC0 /* BusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD068C254035A900486BC0 /* BusViewController.swift */; };
 		99CD069525405F9D00486BC0 /* MeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD069425405F9D00486BC0 /* MeatViewController.swift */; };
@@ -57,10 +62,15 @@
 		4379774CF46B035B8B689712 /* Pods-DitCo2Aftryk-DitCo2AftrykUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DitCo2Aftryk-DitCo2AftrykUITests.debug.xcconfig"; path = "Target Support Files/Pods-DitCo2Aftryk-DitCo2AftrykUITests/Pods-DitCo2Aftryk-DitCo2AftrykUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		83A43BF4DD7BE5752062DD36 /* Pods_DitCo2Aftryk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DitCo2Aftryk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		992FF4712552E3B0004BFB66 /* CircularProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircularProgressBar.swift; path = "../../../Downloads/d73ad00eed7b3b55784c0d24e9852332-860c72ddd58a70604f3defb40c15d063341aa609/CircularProgressBar.swift"; sourceTree = "<group>"; };
+		992FF4882553471B004BFB66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		992FF4E92559632B004BFB66 /* DBFirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBFirestoreService.swift; sourceTree = "<group>"; };
+		992FF4EE25597C5C004BFB66 /* Co2InputData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Co2InputData.swift; sourceTree = "<group>"; };
+		992FF505255D30F0004BFB66 /* DailyCo2Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCo2Count.swift; sourceTree = "<group>"; };
+		992FF50A255D352A004BFB66 /* SnapshotExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotExtensions.swift; sourceTree = "<group>"; };
 		993624FB2510A4E6002BF468 /* DitCo2Aftryk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DitCo2Aftryk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		993624FE2510A4E6002BF468 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		993625002510A4E6002BF468 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		993625022510A4E6002BF468 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		993625022510A4E6002BF468 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		993625052510A4E6002BF468 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		993625082510A4E6002BF468 /* DitCo2Aftryk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DitCo2Aftryk.xcdatamodel; sourceTree = "<group>"; };
 		9936250A2510A4E7002BF468 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,9 +82,9 @@
 		9936251F2510A4E7002BF468 /* DitCo2AftrykUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DitCo2AftrykUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		993625232510A4E7002BF468 /* DitCo2AftrykUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DitCo2AftrykUITests.swift; sourceTree = "<group>"; };
 		993625252510A4E7002BF468 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		993625312510BFAF002BF468 /* SelectCo2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCo2ViewController.swift; sourceTree = "<group>"; };
+		993625312510BFAF002BF468 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		99CD0674253ED99600486BC0 /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
-		99CD067C253EEF3D00486BC0 /* ParentCo2InputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentCo2InputVC.swift; sourceTree = "<group>"; };
+		99CD067C253EEF3D00486BC0 /* ParentInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentInputViewController.swift; sourceTree = "<group>"; };
 		99CD0684253EF4AA00486BC0 /* ClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesViewController.swift; sourceTree = "<group>"; };
 		99CD068C254035A900486BC0 /* BusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusViewController.swift; sourceTree = "<group>"; };
 		99CD069425405F9D00486BC0 /* MeatViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = MeatViewController.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
@@ -125,6 +135,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		992FF4E72559627F004BFB66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				992FF4E92559632B004BFB66 /* DBFirestoreService.swift */,
+				992FF4EE25597C5C004BFB66 /* Co2InputData.swift */,
+				992FF505255D30F0004BFB66 /* DailyCo2Count.swift */,
+				992FF50A255D352A004BFB66 /* SnapshotExtensions.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		992FF4E825596289004BFB66 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				993625022510A4E6002BF468 /* HomeViewController.swift */,
+				993625312510BFAF002BF468 /* MenuViewController.swift */,
+				99CD067C253EEF3D00486BC0 /* ParentInputViewController.swift */,
+				99CD0674253ED99600486BC0 /* CarViewController.swift */,
+				99CD0684253EF4AA00486BC0 /* ClothesViewController.swift */,
+				99CD068C254035A900486BC0 /* BusViewController.swift */,
+				99CD069425405F9D00486BC0 /* MeatViewController.swift */,
+				99CD069925405FAD00486BC0 /* TrainViewController.swift */,
+				99CD069E25405FBC00486BC0 /* ElViewController.swift */,
+				99CD06A325405FCB00486BC0 /* PlaneViewController.swift */,
+				99CD06A825405FDA00486BC0 /* HeatingViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		993624F22510A4E6002BF468 = {
 			isa = PBXGroup;
 			children = (
@@ -152,21 +191,13 @@
 			children = (
 				993624FE2510A4E6002BF468 /* AppDelegate.swift */,
 				993625002510A4E6002BF468 /* SceneDelegate.swift */,
-				993625022510A4E6002BF468 /* ViewController.swift */,
 				992FF4712552E3B0004BFB66 /* CircularProgressBar.swift */,
-				993625312510BFAF002BF468 /* SelectCo2ViewController.swift */,
-				99CD067C253EEF3D00486BC0 /* ParentCo2InputVC.swift */,
-				99CD0674253ED99600486BC0 /* CarViewController.swift */,
-				99CD0684253EF4AA00486BC0 /* ClothesViewController.swift */,
-				99CD068C254035A900486BC0 /* BusViewController.swift */,
-				99CD069425405F9D00486BC0 /* MeatViewController.swift */,
-				99CD069925405FAD00486BC0 /* TrainViewController.swift */,
-				99CD069E25405FBC00486BC0 /* ElViewController.swift */,
-				99CD06A325405FCB00486BC0 /* PlaneViewController.swift */,
-				99CD06A825405FDA00486BC0 /* HeatingViewController.swift */,
-				993625042510A4E6002BF468 /* Main.storyboard */,
+				992FF4E825596289004BFB66 /* View Controllers */,
+				992FF4E72559627F004BFB66 /* Model */,
 				9936250A2510A4E7002BF468 /* Assets.xcassets */,
+				993625042510A4E6002BF468 /* Main.storyboard */,
 				9936250C2510A4E7002BF468 /* LaunchScreen.storyboard */,
+				992FF4882553471B004BFB66 /* GoogleService-Info.plist */,
 				9936250F2510A4E7002BF468 /* Info.plist */,
 				993625072510A4E6002BF468 /* DitCo2Aftryk.xcdatamodeld */,
 			);
@@ -314,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9936250E2510A4E7002BF468 /* LaunchScreen.storyboard in Resources */,
+				992FF4892553471B004BFB66 /* GoogleService-Info.plist in Resources */,
 				9936250B2510A4E7002BF468 /* Assets.xcassets in Resources */,
 				993625062510A4E6002BF468 /* Main.storyboard in Resources */,
 			);
@@ -445,17 +477,21 @@
 			files = (
 				99CD069A25405FAD00486BC0 /* TrainViewController.swift in Sources */,
 				99CD069F25405FBC00486BC0 /* ElViewController.swift in Sources */,
-				99CD067D253EEF3D00486BC0 /* ParentCo2InputVC.swift in Sources */,
+				99CD067D253EEF3D00486BC0 /* ParentInputViewController.swift in Sources */,
 				99CD06A925405FDA00486BC0 /* HeatingViewController.swift in Sources */,
-				993625322510BFAF002BF468 /* SelectCo2ViewController.swift in Sources */,
+				993625322510BFAF002BF468 /* MenuViewController.swift in Sources */,
 				99CD0675253ED99600486BC0 /* CarViewController.swift in Sources */,
 				99CD069525405F9D00486BC0 /* MeatViewController.swift in Sources */,
-				993625032510A4E6002BF468 /* ViewController.swift in Sources */,
+				992FF50B255D352A004BFB66 /* SnapshotExtensions.swift in Sources */,
+				993625032510A4E6002BF468 /* HomeViewController.swift in Sources */,
+				992FF506255D30F0004BFB66 /* DailyCo2Count.swift in Sources */,
 				993624FF2510A4E6002BF468 /* AppDelegate.swift in Sources */,
 				993625012510A4E6002BF468 /* SceneDelegate.swift in Sources */,
 				99CD06A425405FCB00486BC0 /* PlaneViewController.swift in Sources */,
 				993625092510A4E6002BF468 /* DitCo2Aftryk.xcdatamodeld in Sources */,
+				992FF4EF25597C5C004BFB66 /* Co2InputData.swift in Sources */,
 				99CD0685253EF4AA00486BC0 /* ClothesViewController.swift in Sources */,
+				992FF4EA2559632B004BFB66 /* DBFirestoreService.swift in Sources */,
 				99CD068D254035A900486BC0 /* BusViewController.swift in Sources */,
 				992FF4722552E3B1004BFB66 /* CircularProgressBar.swift in Sources */,
 			);

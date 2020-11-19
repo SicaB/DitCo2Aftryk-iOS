@@ -12,7 +12,9 @@ import MaterialComponents.MaterialTextControls_FilledTextFields
 import MaterialComponents.MaterialTextControls_OutlinedTextAreas
 import MaterialComponents.MaterialTextControls_OutlinedTextFields
 
-class ParentCo2InputVC: UIViewController {
+class ParentInputViewController: UIViewController, UITabBarControllerDelegate, UITabBarDelegate {
+    
+    private var dbFirestoreService = DBFirestoreService()
     
     @IBOutlet weak var windmill: UIImageView!
     
@@ -27,28 +29,58 @@ class ParentCo2InputVC: UIViewController {
     @IBOutlet weak var containerViewPlane: UIView!
     @IBOutlet weak var containerViewHeating: UIView!
     
+    @IBOutlet weak var tabBar: UITabBar!
+    
+   
+    
+    @IBAction func backBarButtonAction(_ sender: Any) {
+        self.navigationController!.popViewController(animated: true)
+        
+    }
+    
+    @IBAction func homeBarButtonAction(_ sender: Any) {
+        self.navigationController!.popToRootViewController(animated: true)
+        
+    }
+    
     var id: Int!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBar.delegate = self
         
         hideAllContainerViews()
         
-        selectedSegment(indexNumber: id)
+        
+      
+        
+        selectedIndex(indexNumber: id)
         
         
-        if #available(iOS 13.0, *) {
-            segmentedControl.layer.borderColor = UIColor(named: "ImageGreen")?.cgColor
-            segmentedControl.layer.borderWidth = 1
-            
-            let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-            segmentedControl.setTitleTextAttributes(titleTextAttributes, for: .normal)
-
-            
-        }
-        
-
+//        if #available(iOS 13.0, *) {
+//            segmentedControl.layer.borderColor = UIColor(named: "ImageGreen")?.cgColor
+//            segmentedControl.layer.borderWidth = 1
+//            
+//            let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+//            segmentedControl.setTitleTextAttributes(titleTextAttributes, for: .normal)
+//        }
+    }
+    
+    func saveInputData(input: Co2InputData){
+        dbFirestoreService.saveCo2(input: input)
+    }
+    
+    func saveDailyCount(count: DailyCo2Count) {
+        dbFirestoreService.updateDailyCo2Count(newCount: count)
+    }
+    
+    func getDate() -> String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        let result = formatter.string(from: date)
+        return result
     }
     
     func addTextField(textField: MDCOutlinedTextField, view: UIView, hight: Int){
@@ -81,15 +113,11 @@ class ParentCo2InputVC: UIViewController {
         textField.center = view.center
         textField.sizeToFit()
         view.addSubview(textField)
-    
-        
           
     }
     
     
-    
-    
-    private func selectedSegment(indexNumber: Int) {
+    private func selectedIndex(indexNumber: Int) {
         print(indexNumber)
         
         switch indexNumber {
@@ -113,8 +141,8 @@ class ParentCo2InputVC: UIViewController {
             print("containerError")
         }
         
-        segmentedControl.selectedSegmentIndex = indexNumber
-        
+        tabBar.selectedItem = tabBar.items?[indexNumber]
+
     }
     
     private func hideAllContainerViews(){
@@ -128,16 +156,34 @@ class ParentCo2InputVC: UIViewController {
         containerViewHeating.alpha = 0
     }
     
+//    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+//         let tabBarIndex = tabBarController.selectedIndex
+//         if tabBarIndex == 0 {
+//             //do your stuff
+//         }
+//    }
     
-    @IBAction func didTapSegment(_ sender: UISegmentedControl) {
-        
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+            //This method will be called when user changes tab.
+        print(item.tag)
         hideAllContainerViews()
         
-        let indexNumber = sender.selectedSegmentIndex
+        let indexNumber = item.tag
         
-        selectedSegment(indexNumber: indexNumber)
+        selectedIndex(indexNumber: indexNumber)
+        
+        }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        print("something happend")
+        hideAllContainerViews()
+        
+        let indexNumber = tabBarController.selectedIndex
+        
+        selectedIndex(indexNumber: indexNumber)
         
         
     }
+    
     
 }

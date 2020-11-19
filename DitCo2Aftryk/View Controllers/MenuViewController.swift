@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelectCo2ViewController: UIViewController {
+class MenuViewController: UIViewController {
     
     @IBOutlet weak var carButton: UIButton!
     @IBOutlet weak var clothesButton: UIButton!
@@ -22,6 +22,7 @@ class SelectCo2ViewController: UIViewController {
     var contentEdgeInsets = UIEdgeInsets(top: 45, left: 45, bottom: 45, right: 45)
 
     let greenColor = UIColor(named: "Color")
+    
     
     @IBAction func carButtonCo2(_ sender: UIButton) {
     }
@@ -47,6 +48,11 @@ class SelectCo2ViewController: UIViewController {
     
     
     @IBAction func heatingButtonCo2(_ sender: UIButton) {
+    }
+    
+    @IBAction func backBarButtonAction(_ sender: Any) {
+        self.navigationController!.popToRootViewController(animated: true)
+        
     }
     
     private func adjustImageAndTitleOffsetsForButton(button: UIButton) {
@@ -99,6 +105,7 @@ class SelectCo2ViewController: UIViewController {
         
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         var id = 0
@@ -147,7 +154,7 @@ class SelectCo2ViewController: UIViewController {
             
         }
         
-        let parentCo2InputVC = (segue.destination as! ParentCo2InputVC)
+        let parentCo2InputVC = (segue.destination as! ParentInputViewController)
         parentCo2InputVC.id = id
     }
     

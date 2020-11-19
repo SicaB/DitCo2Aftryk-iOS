@@ -1,5 +1,5 @@
 //
-//  PlaneViewController.swift
+//  BusViewController.swift
 //  DitCo2Aftryk
 //
 //  Created by Sacha Behrend on 21/10/2020.
@@ -12,18 +12,19 @@ import MaterialComponents.MaterialTextControls_FilledTextFields
 import MaterialComponents.MaterialTextControls_OutlinedTextAreas
 import MaterialComponents.MaterialTextControls_OutlinedTextFields
 
-class PlaneViewController: UIViewController {
+class BusViewController: UIViewController {
+    
+  
+    @IBOutlet weak var busSaveCo2Btn: UIButton!
+    
 
-    
-    @IBOutlet weak var planeSaveCo2Btn: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setup()
+       
     }
     
-
     private func setup() {
         
         let topGradientColor = UIColor(named: "HighlightGreen")
@@ -32,7 +33,7 @@ class PlaneViewController: UIViewController {
 
         let gradientLayer = CAGradientLayer()
         
-        gradientLayer.frame = planeSaveCo2Btn.bounds
+        gradientLayer.frame = busSaveCo2Btn.bounds
 
         gradientLayer.colors = [topGradientColor?.cgColor ?? UIColor.blue, bottomGradientColor?.cgColor ?? UIColor.green]
 
@@ -41,23 +42,23 @@ class PlaneViewController: UIViewController {
 
         gradientLayer.locations = [0.0, 1.0]
 
-        planeSaveCo2Btn.layer.insertSublayer(gradientLayer, at: 0)
+        busSaveCo2Btn.layer.insertSublayer(gradientLayer, at: 0)
         
-        planeSaveCo2Btn.layer.cornerRadius = 6
-        planeSaveCo2Btn.layer.masksToBounds = true
-        planeSaveCo2Btn.layer.borderWidth = 1.0
-        planeSaveCo2Btn.layer.borderColor = UIColor(named: "DarkGreen")?.cgColor
+        busSaveCo2Btn.layer.cornerRadius = 6
+        busSaveCo2Btn.layer.masksToBounds = true
+        busSaveCo2Btn.layer.borderWidth = 1.0
+        busSaveCo2Btn.layer.borderColor = UIColor(named: "DarkGreen")?.cgColor
     
 
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
     
-       let planeTextField = MDCOutlinedTextField()
+       let busInputTextField = MDCOutlinedTextField()
        
-        planeTextField.label.text = "Antal timer"
+        busInputTextField.label.text = "Antal km"
         
         // Add material textfield to the ui
-        ParentCo2InputVC().addTextField(textField: planeTextField, view: self.view, hight: 350)
+        ParentInputViewController().addTextField(textField: busInputTextField, view: self.view, hight: 350)
 
         
     }

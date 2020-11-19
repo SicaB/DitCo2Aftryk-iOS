@@ -1,5 +1,5 @@
 //
-//  BusViewController.swift
+//  HeatingViewController.swift
 //  DitCo2Aftryk
 //
 //  Created by Sacha Behrend on 21/10/2020.
@@ -12,19 +12,18 @@ import MaterialComponents.MaterialTextControls_FilledTextFields
 import MaterialComponents.MaterialTextControls_OutlinedTextAreas
 import MaterialComponents.MaterialTextControls_OutlinedTextFields
 
-class BusViewController: UIViewController {
-    
-  
-    @IBOutlet weak var busSaveCo2Btn: UIButton!
-    
+class HeatingViewController: UIViewController {
 
+    
+    @IBOutlet weak var heatingSaveCo2Btn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setup()
-       
+      setup()
     }
     
+
     private func setup() {
         
         let topGradientColor = UIColor(named: "HighlightGreen")
@@ -33,7 +32,7 @@ class BusViewController: UIViewController {
 
         let gradientLayer = CAGradientLayer()
         
-        gradientLayer.frame = busSaveCo2Btn.bounds
+        gradientLayer.frame = heatingSaveCo2Btn.bounds
 
         gradientLayer.colors = [topGradientColor?.cgColor ?? UIColor.blue, bottomGradientColor?.cgColor ?? UIColor.green]
 
@@ -42,23 +41,23 @@ class BusViewController: UIViewController {
 
         gradientLayer.locations = [0.0, 1.0]
 
-        busSaveCo2Btn.layer.insertSublayer(gradientLayer, at: 0)
+        heatingSaveCo2Btn.layer.insertSublayer(gradientLayer, at: 0)
         
-        busSaveCo2Btn.layer.cornerRadius = 6
-        busSaveCo2Btn.layer.masksToBounds = true
-        busSaveCo2Btn.layer.borderWidth = 1.0
-        busSaveCo2Btn.layer.borderColor = UIColor(named: "DarkGreen")?.cgColor
+        heatingSaveCo2Btn.layer.cornerRadius = 6
+        heatingSaveCo2Btn.layer.masksToBounds = true
+        heatingSaveCo2Btn.layer.borderWidth = 1.0
+        heatingSaveCo2Btn.layer.borderColor = UIColor(named: "DarkGreen")?.cgColor
     
 
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
     
-       let busInputTextField = MDCOutlinedTextField()
+       let heatingTextField = MDCOutlinedTextField()
        
-        busInputTextField.label.text = "Antal km"
+        heatingTextField.label.text = "Antal kWh"
         
         // Add material textfield to the ui
-        ParentCo2InputVC().addTextField(textField: busInputTextField, view: self.view, hight: 350)
+        ParentInputViewController().addTextField(textField: heatingTextField, view: self.view, hight: 350)
 
         
     }

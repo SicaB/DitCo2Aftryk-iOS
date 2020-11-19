@@ -1,5 +1,5 @@
 //
-//  HeatingViewController.swift
+//  MeatViewController.swift
 //  DitCo2Aftryk
 //
 //  Created by Sacha Behrend on 21/10/2020.
@@ -12,18 +12,21 @@ import MaterialComponents.MaterialTextControls_FilledTextFields
 import MaterialComponents.MaterialTextControls_OutlinedTextAreas
 import MaterialComponents.MaterialTextControls_OutlinedTextFields
 
-class HeatingViewController: UIViewController {
-
+class MeatViewController: UIViewController {
     
-    @IBOutlet weak var heatingSaveCo2Btn: UIButton!
+    let parentVC = ParentInputViewController()
+    
+    @IBOutlet weak var meatSaveCo2Btn: UIButton!
+    @IBOutlet weak var meatContainerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setup()
 
-      setup()
+        
     }
     
-
     private func setup() {
         
         let topGradientColor = UIColor(named: "HighlightGreen")
@@ -32,7 +35,7 @@ class HeatingViewController: UIViewController {
 
         let gradientLayer = CAGradientLayer()
         
-        gradientLayer.frame = heatingSaveCo2Btn.bounds
+        gradientLayer.frame = meatSaveCo2Btn.bounds
 
         gradientLayer.colors = [topGradientColor?.cgColor ?? UIColor.blue, bottomGradientColor?.cgColor ?? UIColor.green]
 
@@ -41,23 +44,23 @@ class HeatingViewController: UIViewController {
 
         gradientLayer.locations = [0.0, 1.0]
 
-        heatingSaveCo2Btn.layer.insertSublayer(gradientLayer, at: 0)
+        meatSaveCo2Btn.layer.insertSublayer(gradientLayer, at: 0)
         
-        heatingSaveCo2Btn.layer.cornerRadius = 6
-        heatingSaveCo2Btn.layer.masksToBounds = true
-        heatingSaveCo2Btn.layer.borderWidth = 1.0
-        heatingSaveCo2Btn.layer.borderColor = UIColor(named: "DarkGreen")?.cgColor
+        meatSaveCo2Btn.layer.cornerRadius = 6
+        meatSaveCo2Btn.layer.masksToBounds = true
+        meatSaveCo2Btn.layer.borderWidth = 1.0
+        meatSaveCo2Btn.layer.borderColor = UIColor(named: "DarkGreen")?.cgColor
     
 
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
     
-       let heatingTextField = MDCOutlinedTextField()
+       let meatTextField = MDCOutlinedTextField()
        
-        heatingTextField.label.text = "Antal kWh"
+        meatTextField.label.text = "Antal kg"
         
         // Add material textfield to the ui
-        ParentCo2InputVC().addTextField(textField: heatingTextField, view: self.view, hight: 350)
+        ParentInputViewController().addTextField(textField: meatTextField, view: self.view, hight: 350)
 
         
     }

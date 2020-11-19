@@ -12,25 +12,54 @@ import MaterialComponents.MaterialTextControls_FilledTextFields
 import MaterialComponents.MaterialTextControls_OutlinedTextAreas
 import MaterialComponents.MaterialTextControls_OutlinedTextFields
 
-
-
-
 class CarViewController: UIViewController {
     
+    let parentVC = ParentInputViewController()
   
     @IBOutlet var carView: UIView!
-    @IBOutlet weak var enterCo2: UITextField!
+ 
     @IBOutlet weak var emittedCo2: UITextField!
     @IBOutlet weak var carSaveCo2Btn: UIButton!
     
     let gradientLayer = CAGradientLayer()
+    let carInputTextField = MDCOutlinedTextField()
     let carBtn = MDCButton()
+    
+    private var co2Input = Co2InputData(source: "", size: 0, date: "")
+    private var dailyCount = DailyCo2Count(count: 0, date: "")
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
+    
+    
+    }
+    
+    
+    @IBAction func saveCarCo2(_ sender: Any) {
+        
+        let date = parentVC.getDate()
+        if let inputValue = carInputTextField.text {
+            let inputFloat = (inputValue as NSString).floatValue
+            co2Input = Co2InputData(source: "car", size: inputFloat, date: date)
+            dailyCount = DailyCo2Count(count: inputFloat, date: date)
+            parentVC.saveInputData(input: co2Input)
+            parentVC.saveDailyCount(count: dailyCount)
+            
+            self.navigationController!.popToRootViewController(animated: true)
+        
+        }
+        
+        
+        print("There is no data to save!")
+        
+        
+        
+        
+        
     }
     
     private func setup() {
@@ -70,7 +99,7 @@ class CarViewController: UIViewController {
 //        emittedCo2.layer.borderColor = UIColor.darkGray.cgColor
 //        emittedCo2.attributedPlaceholder = NSAttributedString(string: "Udledt Co2 i kg", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         
-        carSaveCo2Btn.layer.cornerRadius = 6
+        carSaveCo2Btn.layer.cornerRadius = 18
         carSaveCo2Btn.layer.masksToBounds = true
         carSaveCo2Btn.layer.borderWidth = 1.0
         carSaveCo2Btn.layer.borderColor = UIColor(named: "DarkGreen")?.cgColor
@@ -79,12 +108,12 @@ class CarViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
     
-       let carInputTextField = MDCOutlinedTextField()
+
        
         carInputTextField.label.text = "Antal km"
         
         // Add material textfield to the ui
-        ParentCo2InputVC().addTextField(textField: carInputTextField, view: self.view, hight: 350)
+        ParentInputViewController().addTextField(textField: carInputTextField, view: self.view, hight: 350)
 
         
         

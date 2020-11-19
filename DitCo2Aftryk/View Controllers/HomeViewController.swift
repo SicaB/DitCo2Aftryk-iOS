@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     
+    private var dbFirestoreService = DBFirestoreService()
+    let db = Firestore.firestore()
     
     
     @IBOutlet weak var progressBar: CircularProgressBar!
@@ -35,9 +38,37 @@ class ViewController: UIViewController {
         progressBar.lineWidth = 15
     
         progressBar.safePercent = 100
-        //progressBar.setProgress(to: 1, withAnimation: true)
-  
         
+        //progressBar.setProgress(to: 1, withAnimation: true)
+        
+        // listen to database updates when count is changed
+        db.collection("countCollection").document("dailyCount").addSnapshotListener { documentSnapshot, error in
+            guard let document = documentSnapshot else {
+                print("Error fetching document: \(error!)")
+                return
+              }
+            
+            guard let data = document.data() else {
+                print("Document data was empty.")
+                return
+              }
+            
+            
+              print("Current data: \(data)")
+              self.dbFirestoreService.getDailyCo2Count(completion: { count in
+                  if let oldCount = count {
+                    self.co2Counter.text = String(oldCount)
+                }
+                else  {
+                    // you got an error
+                }
+            })
+            
+            }
+        
+       
+        
+
     }
     
     private func setup() {

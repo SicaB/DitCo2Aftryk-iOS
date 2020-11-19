@@ -1,5 +1,5 @@
 //
-//  MeatViewController.swift
+//  ElViewController.swift
 //  DitCo2Aftryk
 //
 //  Created by Sacha Behrend on 21/10/2020.
@@ -12,19 +12,15 @@ import MaterialComponents.MaterialTextControls_FilledTextFields
 import MaterialComponents.MaterialTextControls_OutlinedTextAreas
 import MaterialComponents.MaterialTextControls_OutlinedTextFields
 
-class MeatViewController: UIViewController {
+class ElViewController: UIViewController {
+
     
-    let parentVC = ParentCo2InputVC()
-    
-    @IBOutlet weak var meatSaveCo2Btn: UIButton!
-    @IBOutlet weak var meatContainerView: UIView!
+    @IBOutlet weak var elSaveCo2Btn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setup()
 
-        
+        setup()
     }
     
     private func setup() {
@@ -35,7 +31,7 @@ class MeatViewController: UIViewController {
 
         let gradientLayer = CAGradientLayer()
         
-        gradientLayer.frame = meatSaveCo2Btn.bounds
+        gradientLayer.frame = elSaveCo2Btn.bounds
 
         gradientLayer.colors = [topGradientColor?.cgColor ?? UIColor.blue, bottomGradientColor?.cgColor ?? UIColor.green]
 
@@ -44,25 +40,26 @@ class MeatViewController: UIViewController {
 
         gradientLayer.locations = [0.0, 1.0]
 
-        meatSaveCo2Btn.layer.insertSublayer(gradientLayer, at: 0)
+        elSaveCo2Btn.layer.insertSublayer(gradientLayer, at: 0)
         
-        meatSaveCo2Btn.layer.cornerRadius = 6
-        meatSaveCo2Btn.layer.masksToBounds = true
-        meatSaveCo2Btn.layer.borderWidth = 1.0
-        meatSaveCo2Btn.layer.borderColor = UIColor(named: "DarkGreen")?.cgColor
+        elSaveCo2Btn.layer.cornerRadius = 6
+        elSaveCo2Btn.layer.masksToBounds = true
+        elSaveCo2Btn.layer.borderWidth = 1.0
+        elSaveCo2Btn.layer.borderColor = UIColor(named: "DarkGreen")?.cgColor
     
 
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
     
-       let meatTextField = MDCOutlinedTextField()
+       let elTextField = MDCOutlinedTextField()
        
-        meatTextField.label.text = "Antal kg"
+        elTextField.label.text = "Antal kWh"
         
         // Add material textfield to the ui
-        ParentCo2InputVC().addTextField(textField: meatTextField, view: self.view, hight: 350)
+        ParentInputViewController().addTextField(textField: elTextField, view: self.view, hight: 350)
 
         
     }
+
 
 }

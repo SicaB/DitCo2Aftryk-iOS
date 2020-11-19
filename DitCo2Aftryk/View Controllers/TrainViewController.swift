@@ -1,8 +1,8 @@
 //
-//  ClothesViewController.swift
+//  TrainViewController.swift
 //  DitCo2Aftryk
 //
-//  Created by Sacha Behrend on 20/10/2020.
+//  Created by Sacha Behrend on 21/10/2020.
 //  Copyright © 2020 Sacha Behrend. All rights reserved.
 //
 
@@ -12,17 +12,16 @@ import MaterialComponents.MaterialTextControls_FilledTextFields
 import MaterialComponents.MaterialTextControls_OutlinedTextAreas
 import MaterialComponents.MaterialTextControls_OutlinedTextFields
 
+class TrainViewController: UIViewController {
 
-class ClothesViewController: UIViewController {
     
-    @IBOutlet weak var clothesSaveCo2Btn: UIButton!
+    @IBOutlet weak var trainSaveCo2Btn: UIButton!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
-
+     
     }
     
     private func setup() {
@@ -33,7 +32,7 @@ class ClothesViewController: UIViewController {
 
         let gradientLayer = CAGradientLayer()
         
-        gradientLayer.frame = clothesSaveCo2Btn.bounds
+        gradientLayer.frame = trainSaveCo2Btn.bounds
 
         gradientLayer.colors = [topGradientColor?.cgColor ?? UIColor.blue, bottomGradientColor?.cgColor ?? UIColor.green]
 
@@ -42,26 +41,25 @@ class ClothesViewController: UIViewController {
 
         gradientLayer.locations = [0.0, 1.0]
 
-        clothesSaveCo2Btn.layer.insertSublayer(gradientLayer, at: 0)
+        trainSaveCo2Btn.layer.insertSublayer(gradientLayer, at: 0)
         
-        clothesSaveCo2Btn.layer.cornerRadius = 6
-        clothesSaveCo2Btn.layer.masksToBounds = true
-        clothesSaveCo2Btn.layer.borderWidth = 1.0
-        clothesSaveCo2Btn.layer.borderColor = UIColor(named: "DarkGreen")?.cgColor
+        trainSaveCo2Btn.layer.cornerRadius = 6
+        trainSaveCo2Btn.layer.masksToBounds = true
+        trainSaveCo2Btn.layer.borderWidth = 1.0
+        trainSaveCo2Btn.layer.borderColor = UIColor(named: "DarkGreen")?.cgColor
     
 
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
     
-       let clothesInputTextField = MDCOutlinedTextField()
+       let trainTextField = MDCOutlinedTextField()
        
-        clothesInputTextField.label.text = "Antal kg"
+        trainTextField.label.text = "Antal km"
         
         // Add material textfield to the ui
-        ParentCo2InputVC().addTextField(textField: clothesInputTextField, view: self.view, hight: 350)
+        ParentInputViewController().addTextField(textField: trainTextField, view: self.view, hight: 350)
 
         
     }
-    
 
 }
