@@ -26,7 +26,7 @@ class DBFirestoreService {
         ], merge: true) {
             err in
             if let err = err {
-                print("Error writing to document: \(err)")
+                print("Error writing to inputData document: \(err)")
             } else {
                 print("Co2 input succesfully written")
             }
@@ -34,32 +34,10 @@ class DBFirestoreService {
         
     }
     
-//    func readArray(completion: @escaping (Float?, Error?) -> Void){
-//
-//        self.db.collection("countCollection").getDocuments { (snapshot, err) in
-//           if let err = err {
-//               print("Error getting documents: \(err)")
-//                completion(nil, err)
-//
-//           } else {
-//            guard snapshot != nil else {
-//                return
-//            }
-//               for document in snapshot!.documents {
-//                _ = document.data()
-//                let count = document.get("count") as? Float
-//                self.oldCount.count = count!
-//                completion(self.oldCount.count, nil)
-//                  print(count!)
-//               }
-//           }
-//       }
-//    }
-    
     func getDailyCo2Count(completion: @escaping (Float?) -> Void) {
-            let co2Count = db.collection("countCollection")
+            let collectionRef = db.collection("todaysCountAccumulated")
             var count: Float? = 0
-            co2Count.getDocuments { (snapshot, _) in
+            collectionRef.getDocuments { (snapshot, _) in
             let documents = snapshot!.documents
             try! documents.forEach{ document in
                 let dailyCount: DailyCo2Count = try document.decoded()
@@ -76,9 +54,25 @@ class DBFirestoreService {
         }
     }
     
+    func getDateInDatabase(completion: @escaping (String?) -> Void) {
+        let collectionRef = db.collection("todaysCountAccumulated")
+        var dateInDatabase: String? = ""
+        collectionRef.getDocuments{ (snapshot, _) in
+            let documents = snapshot!.documents
+            try! documents.forEach{ document in
+                let date: DailyCo2Count = try document.decoded()
+                dateInDatabase = date.date
+                completion(dateInDatabase)
+                print(dateInDatabase!)
+                
+            }
+            
+        }
+    }
+    
     
     func updateDailyCo2Count(newCount: DailyCo2Count) {
-        let docRef = db.collection("countCollection").document("dailyCount")
+        let docRef = db.collection("todaysCountAccumulated").document("todaysCount")
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
                 
@@ -107,16 +101,48 @@ class DBFirestoreService {
                     if let error = error {
                         print("\(error.localizedDescription)")
                     } else {
-                        print("Document was created")
+                        print("TodaysCountAccumulated document was created")
                     }
                 }
               }
         }
     }
+    
+    // function to save the accumulated daily count in a new collection
+    func saveDailyCo2Count(data: DailyCo2Count) {
+        db.collection("dailyCounts").document().setData([
+            "size": data.count,
+            "date": data.date,
+            "created": Firebase.Timestamp.init(date: Date())
+        ], merge: true) {
+            err in
+            if let err = err {
+                print("Error writing to dailyCounts document: \(err)")
+            } else {
+                print("Daily Co2 succesfully written")
+            }
+        }
+    }
 
     
-    func deleteCo2(data: Co2InputData) {
-        
+    func deleteDailyCount() {
+        db.collection("todaysCountAccumulated").document("todaysCount").delete() { err in
+            if let err = err {
+                print("Error removing TodaysCount document: \(err)")
+            } else {
+                print("TodaysCount document successfully removed!")
+            }
+        }
+    }
+    
+    func deleteAllInputs() {
+        db.collection("inputData").document().delete() { err in
+            if let err = err {
+                print("Error removing inputData document: \(err)")
+            } else {
+                print("All inputs have been successfully removed!")
+            }
+        }
     }
     
  }

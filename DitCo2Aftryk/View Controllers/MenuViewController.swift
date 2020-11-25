@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuViewController: UIViewController {
+class MenuViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var carButton: UIButton!
     @IBOutlet weak var clothesButton: UIButton!
@@ -78,6 +78,8 @@ class MenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
 
         carButton.contentEdgeInsets = contentEdgeInsets
         self.adjustImageAndTitleOffsetsForButton(button: carButton)
@@ -158,6 +160,9 @@ class MenuViewController: UIViewController {
         parentCo2InputVC.id = id
     }
     
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+           return true
+       }
 
   
 }

@@ -26,6 +26,7 @@
 		993625192510A4E7002BF468 /* DitCo2AftrykTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625182510A4E7002BF468 /* DitCo2AftrykTests.swift */; };
 		993625242510A4E7002BF468 /* DitCo2AftrykUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625232510A4E7002BF468 /* DitCo2AftrykUITests.swift */; };
 		993625322510BFAF002BF468 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625312510BFAF002BF468 /* MenuViewController.swift */; };
+		994074F9256BC0D300BD5B38 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994074F8256BC0D300BD5B38 /* Model.swift */; };
 		99CD0675253ED99600486BC0 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD0674253ED99600486BC0 /* CarViewController.swift */; };
 		99CD067D253EEF3D00486BC0 /* ParentInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD067C253EEF3D00486BC0 /* ParentInputViewController.swift */; };
 		99CD0685253EF4AA00486BC0 /* ClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD0684253EF4AA00486BC0 /* ClothesViewController.swift */; };
@@ -83,6 +84,7 @@
 		993625232510A4E7002BF468 /* DitCo2AftrykUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DitCo2AftrykUITests.swift; sourceTree = "<group>"; };
 		993625252510A4E7002BF468 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		993625312510BFAF002BF468 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		994074F8256BC0D300BD5B38 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		99CD0674253ED99600486BC0 /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
 		99CD067C253EEF3D00486BC0 /* ParentInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentInputViewController.swift; sourceTree = "<group>"; };
 		99CD0684253EF4AA00486BC0 /* ClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				993624FE2510A4E6002BF468 /* AppDelegate.swift */,
 				993625002510A4E6002BF468 /* SceneDelegate.swift */,
 				992FF4712552E3B0004BFB66 /* CircularProgressBar.swift */,
+				994074F8256BC0D300BD5B38 /* Model.swift */,
 				992FF4E825596289004BFB66 /* View Controllers */,
 				992FF4E72559627F004BFB66 /* Model */,
 				9936250A2510A4E7002BF468 /* Assets.xcassets */,
@@ -490,6 +493,7 @@
 				99CD06A425405FCB00486BC0 /* PlaneViewController.swift in Sources */,
 				993625092510A4E6002BF468 /* DitCo2Aftryk.xcdatamodeld in Sources */,
 				992FF4EF25597C5C004BFB66 /* Co2InputData.swift in Sources */,
+				994074F9256BC0D300BD5B38 /* Model.swift in Sources */,
 				99CD0685253EF4AA00486BC0 /* ClothesViewController.swift in Sources */,
 				992FF4EA2559632B004BFB66 /* DBFirestoreService.swift in Sources */,
 				99CD068D254035A900486BC0 /* BusViewController.swift in Sources */,

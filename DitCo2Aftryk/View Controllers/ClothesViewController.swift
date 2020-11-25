@@ -17,12 +17,35 @@ class ClothesViewController: UIViewController {
     
     @IBOutlet weak var clothesSaveCo2Btn: UIButton!
     
-
+    let parentVC = ParentInputViewController()
+    let clothesInputTextField = MDCOutlinedTextField()
+    let emittedCo2 = MDCOutlinedTextField()
+    let clothesBtn = MDCButton()
+    
+    private var co2Input = Co2InputData(source: "", size: 0, date: "")
+    private var dailyCount = DailyCo2Count(count: 0, date: "")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
 
+    }
+        
+    @IBAction func saveClothesCo2(_ sender: Any) {
+        let date = parentVC.getDate()
+        if let inputValue = clothesInputTextField.text {
+            let inputFloat = (inputValue as NSString).floatValue
+            co2Input = Co2InputData(source: "clothes", size: inputFloat, date: date)
+            dailyCount = DailyCo2Count(count: inputFloat, date: date)
+            parentVC.saveInputData(input: co2Input)
+            parentVC.saveDailyCount(count: dailyCount)
+            
+            self.navigationController!.popToRootViewController(animated: true)
+        
+        }
+                
+        print("There is no data to save!")
     }
     
     private func setup() {
@@ -52,13 +75,16 @@ class ClothesViewController: UIViewController {
 
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
-    
-       let clothesInputTextField = MDCOutlinedTextField()
        
-        clothesInputTextField.label.text = "Antal kg"
+        clothesInputTextField.label.text = "Indtast kg"
         
         // Add material textfield to the ui
-        ParentInputViewController().addTextField(textField: clothesInputTextField, view: self.view, hight: 350)
+        parentVC.addTextField(textField: clothesInputTextField, view: self.view, hight: 350)
+        
+        emittedCo2.label.text = "Udledt CO2"
+        
+        parentVC.addEmittedTextField(textField: emittedCo2, view: self.view, hight: 200)
+
 
         
     }

@@ -14,6 +14,13 @@ import MaterialComponents.MaterialTextControls_OutlinedTextFields
 
 class TrainViewController: UIViewController {
 
+    let parentVC = ParentInputViewController()
+    let trainInputTextField = MDCOutlinedTextField()
+    let emittedCo2 = MDCOutlinedTextField()
+    let trainBtn = MDCButton()
+    
+    private var co2Input = Co2InputData(source: "", size: 0, date: "")
+    private var dailyCount = DailyCo2Count(count: 0, date: "")
     
     @IBOutlet weak var trainSaveCo2Btn: UIButton!
     
@@ -22,6 +29,22 @@ class TrainViewController: UIViewController {
         
         setup()
      
+    }
+    
+    @IBAction func saveTrainCo2(_ sender: Any) {
+        let date = parentVC.getDate()
+        if let inputValue = trainInputTextField.text {
+            let inputFloat = (inputValue as NSString).floatValue
+            co2Input = Co2InputData(source: "train", size: inputFloat, date: date)
+            dailyCount = DailyCo2Count(count: inputFloat, date: date)
+            parentVC.saveInputData(input: co2Input)
+            parentVC.saveDailyCount(count: dailyCount)
+            
+            self.navigationController!.popToRootViewController(animated: true)
+        
+        }
+                
+        print("There is no data to save!")
     }
     
     private func setup() {
@@ -51,13 +74,16 @@ class TrainViewController: UIViewController {
 
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
-    
-       let trainTextField = MDCOutlinedTextField()
        
-        trainTextField.label.text = "Antal km"
+        trainInputTextField.label.text = "Indtast km"
         
         // Add material textfield to the ui
-        ParentInputViewController().addTextField(textField: trainTextField, view: self.view, hight: 350)
+        ParentInputViewController().addTextField(textField: trainInputTextField, view: self.view, hight: 350)
+        
+        emittedCo2.label.text = "Udledt CO2"
+        
+        parentVC.addEmittedTextField(textField: emittedCo2, view: self.view, hight: 200)
+
 
         
     }

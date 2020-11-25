@@ -15,10 +15,12 @@ import MaterialComponents.MaterialTextControls_OutlinedTextFields
 class ParentInputViewController: UIViewController, UITabBarControllerDelegate, UITabBarDelegate {
     
     private var dbFirestoreService = DBFirestoreService()
+    let deviceType = UIDevice().type
+    var id: Int!
     
     @IBOutlet weak var windmill: UIImageView!
     
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var containerViewCar: UIView!
     @IBOutlet weak var containerViewClothes: UIView!
@@ -28,43 +30,29 @@ class ParentInputViewController: UIViewController, UITabBarControllerDelegate, U
     @IBOutlet weak var containerViewEl: UIView!
     @IBOutlet weak var containerViewPlane: UIView!
     @IBOutlet weak var containerViewHeating: UIView!
-    
     @IBOutlet weak var tabBar: UITabBar!
     
-   
+    @IBOutlet weak var hightContainerViewsConstraint: NSLayoutConstraint!
     
     @IBAction func backBarButtonAction(_ sender: Any) {
         self.navigationController!.popViewController(animated: true)
-        
     }
     
     @IBAction func homeBarButtonAction(_ sender: Any) {
         self.navigationController!.popToRootViewController(animated: true)
-        
     }
     
-    var id: Int!
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.delegate = self
+        device()
         
         hideAllContainerViews()
-        
-        
-      
-        
+
         selectedIndex(indexNumber: id)
         
-        
-//        if #available(iOS 13.0, *) {
-//            segmentedControl.layer.borderColor = UIColor(named: "ImageGreen")?.cgColor
-//            segmentedControl.layer.borderWidth = 1
-//            
-//            let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-//            segmentedControl.setTitleTextAttributes(titleTextAttributes, for: .normal)
-//        }
     }
     
     func saveInputData(input: Co2InputData){
@@ -88,18 +76,19 @@ class ParentInputViewController: UIViewController, UITabBarControllerDelegate, U
         let textFieldFrame = CGRect(x: 0, y: 0, width: Int(view.frame.width) - 140, height: hight)
         
         textField.frame = textFieldFrame
-       
+        //textField.backgroundColor = UIColor(named: "ColorIcon")
+        textField.font = .systemFont(ofSize: 16)
         textField.setTextColor(.white, for: .editing)
         textField.setTextColor(.white, for: .normal)
         textField.setFloatingLabelColor(.white, for: .editing)
-        textField.setFloatingLabelColor(.white, for: .disabled)
+        textField.setFloatingLabelColor(UIColor(named: "ColorIcon")!, for: .disabled)
         textField.setFloatingLabelColor(.white, for: .normal)
-        textField.setNormalLabelColor(.white, for: .normal)
-        textField.setNormalLabelColor(.white, for: .disabled)
-        textField.setNormalLabelColor(.white, for: .editing)
-        textField.setOutlineColor(.white, for: .normal)
-        textField.setOutlineColor(.white, for: .editing)
-        textField.setOutlineColor(.white, for: .disabled)
+        textField.setNormalLabelColor(.gray, for: .normal)
+        textField.setNormalLabelColor(.gray, for: .disabled)
+        textField.setNormalLabelColor(.gray, for: .editing)
+        textField.setOutlineColor(.gray, for: .normal)
+        textField.setOutlineColor(UIColor(named: "ColorIcon")!, for: .editing)
+        //textField.setOutlineColor(.gray, for: .disabled)
         textField.keyboardType = .decimalPad
 
         textField.trailingViewMode = .whileEditing
@@ -115,6 +104,36 @@ class ParentInputViewController: UIViewController, UITabBarControllerDelegate, U
         view.addSubview(textField)
           
     }
+    
+    func addEmittedTextField(textField: MDCOutlinedTextField, view: UIView, hight: Int){
+        
+        let textFieldFrame = CGRect(x: 0, y: 0, width: Int(view.frame.width) - 140, height: hight)
+        
+        textField.frame = textFieldFrame
+        textField.font = .systemFont(ofSize: 16)
+        textField.setTextColor(.white, for: .editing)
+        textField.setTextColor(.white, for: .normal)
+        textField.setFloatingLabelColor(UIColor(named: "ColorIcon")!, for: .editing)
+        textField.setFloatingLabelColor(UIColor(named: "ColorIcon")!, for: .disabled)
+        textField.setFloatingLabelColor(.white, for: .normal)
+        textField.setNormalLabelColor(.darkGray, for: .normal)
+        textField.setNormalLabelColor(.darkGray, for: .disabled)
+        textField.setNormalLabelColor(.darkGray, for: .editing)
+        textField.setOutlineColor(.darkGray, for: .normal)
+        textField.setOutlineColor(.darkGray, for: .editing)
+        textField.setOutlineColor(.darkGray, for: .disabled)
+        textField.isUserInteractionEnabled = false
+
+        textField.trailingViewMode = .whileEditing
+    
+        textField.tintColor = .white
+        textField.center = view.center
+        textField.sizeToFit()
+        view.addSubview(textField)
+          
+    }
+    
+
     
     
     private func selectedIndex(indexNumber: Int) {
@@ -185,5 +204,60 @@ class ParentInputViewController: UIViewController, UITabBarControllerDelegate, U
         
     }
     
+    private func device() {
+        switch deviceType {
+        case .iPhone5:
+            break
+        case .iPhone5S:
+            break
+        case .iPhone6:
+            break
+        case .iPhone6Plus:
+            break
+        case .iPhone6S:
+            hightContainerViewsConstraint.constant = 200
+            containerView.layoutIfNeeded()
+        case .iPhone6SPlus:
+            break
+        case .iPhone7:
+            break
+        case .iPhone7Plus:
+            break
+        case .iPhone8:
+            break
+        case .iPhone8Plus:
+            break
+        case .iPhoneX:
+            // do tabbar
+            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -10)
+        case .iPhoneXS:
+            // do tabbar
+            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -10)
+        case .iPhoneXSMax:
+            break
+        case .iPhone11:
+            break
+        case .iPhone11Pro:
+            // do tabbar
+            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -10)
+        case .iPhone11ProMax:
+            break
+        case .iPhone12:
+            // do tabbar
+            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -10)
+        case .iPhone12Mini:
+            // do tabbar
+            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -10)
+        case .iPhone12Pro:
+            
+            // do tabbar
+            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -10)
+        case .unrecognized: break
+            // nothing
+        default: break
+            
+        }
+    
+    }
     
 }

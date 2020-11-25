@@ -14,6 +14,13 @@ import MaterialComponents.MaterialTextControls_OutlinedTextFields
 
 class HeatingViewController: UIViewController {
 
+    let parentVC = ParentInputViewController()
+    let heatingInputTextField = MDCOutlinedTextField()
+    let emittedCo2 = MDCOutlinedTextField()
+    let heatingBtn = MDCButton()
+    
+    private var co2Input = Co2InputData(source: "", size: 0, date: "")
+    private var dailyCount = DailyCo2Count(count: 0, date: "")
     
     @IBOutlet weak var heatingSaveCo2Btn: UIButton!
     
@@ -21,6 +28,23 @@ class HeatingViewController: UIViewController {
         super.viewDidLoad()
 
       setup()
+    }
+    
+    
+    @IBAction func saveHeatingCo2(_ sender: Any) {
+        let date = parentVC.getDate()
+        if let inputValue = heatingInputTextField.text {
+            let inputFloat = (inputValue as NSString).floatValue
+            co2Input = Co2InputData(source: "heating", size: inputFloat, date: date)
+            dailyCount = DailyCo2Count(count: inputFloat, date: date)
+            parentVC.saveInputData(input: co2Input)
+            parentVC.saveDailyCount(count: dailyCount)
+            
+            self.navigationController!.popToRootViewController(animated: true)
+        
+        }
+                
+        print("There is no data to save!")
     }
     
 
@@ -51,15 +75,16 @@ class HeatingViewController: UIViewController {
 
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
-    
-       let heatingTextField = MDCOutlinedTextField()
        
-        heatingTextField.label.text = "Antal kWh"
+        heatingInputTextField.label.text = "Indtast kWh"
         
         // Add material textfield to the ui
-        ParentInputViewController().addTextField(textField: heatingTextField, view: self.view, hight: 350)
-
+        ParentInputViewController().addTextField(textField: heatingInputTextField, view: self.view, hight: 350)
         
+        emittedCo2.label.text = "Udledt CO2"
+        
+        parentVC.addEmittedTextField(textField: emittedCo2, view: self.view, hight: 200)
+
     }
 
 }
