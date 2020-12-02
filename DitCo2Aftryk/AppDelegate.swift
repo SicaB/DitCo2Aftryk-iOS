@@ -13,6 +13,8 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+ 
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         UITabBar.appearance().unselectedItemTintColor = UIColor(named: "IconGray")
@@ -20,20 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.gray], for: .normal)
         
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white], for: .selected)
-
-        
-//        let BarButtonItemAppearance = UIBarButtonItem.appearance()
-//        BarButtonItemAppearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
         
         FirebaseApp.configure()
-        
-
-        
-
         
         // Override point for customization after application launch.
         return true
     }
+    
+
 
     // MARK: UISceneSession Lifecycle
 

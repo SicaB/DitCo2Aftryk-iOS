@@ -26,6 +26,7 @@
 		993625192510A4E7002BF468 /* DitCo2AftrykTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625182510A4E7002BF468 /* DitCo2AftrykTests.swift */; };
 		993625242510A4E7002BF468 /* DitCo2AftrykUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625232510A4E7002BF468 /* DitCo2AftrykUITests.swift */; };
 		993625322510BFAF002BF468 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993625312510BFAF002BF468 /* MenuViewController.swift */; };
+		99379B422574436B006DFAE4 /* WeeklyCo2Counts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99379B412574436A006DFAE4 /* WeeklyCo2Counts.swift */; };
 		994074F9256BC0D300BD5B38 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994074F8256BC0D300BD5B38 /* Model.swift */; };
 		99CD0675253ED99600486BC0 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD0674253ED99600486BC0 /* CarViewController.swift */; };
 		99CD067D253EEF3D00486BC0 /* ParentInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD067C253EEF3D00486BC0 /* ParentInputViewController.swift */; };
@@ -84,6 +85,7 @@
 		993625232510A4E7002BF468 /* DitCo2AftrykUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DitCo2AftrykUITests.swift; sourceTree = "<group>"; };
 		993625252510A4E7002BF468 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		993625312510BFAF002BF468 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		99379B412574436A006DFAE4 /* WeeklyCo2Counts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCo2Counts.swift; sourceTree = "<group>"; };
 		994074F8256BC0D300BD5B38 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		99CD0674253ED99600486BC0 /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
 		99CD067C253EEF3D00486BC0 /* ParentInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentInputViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				992FF4EE25597C5C004BFB66 /* Co2InputData.swift */,
 				992FF505255D30F0004BFB66 /* DailyCo2Count.swift */,
 				992FF50A255D352A004BFB66 /* SnapshotExtensions.swift */,
+				99379B412574436A006DFAE4 /* WeeklyCo2Counts.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				99CD069525405F9D00486BC0 /* MeatViewController.swift in Sources */,
 				992FF50B255D352A004BFB66 /* SnapshotExtensions.swift in Sources */,
 				993625032510A4E6002BF468 /* HomeViewController.swift in Sources */,
+				99379B422574436B006DFAE4 /* WeeklyCo2Counts.swift in Sources */,
 				992FF506255D30F0004BFB66 /* DailyCo2Count.swift in Sources */,
 				993624FF2510A4E6002BF468 /* AppDelegate.swift in Sources */,
 				993625012510A4E6002BF468 /* SceneDelegate.swift in Sources */,

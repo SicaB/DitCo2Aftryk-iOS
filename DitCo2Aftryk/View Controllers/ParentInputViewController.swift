@@ -46,7 +46,7 @@ class ParentInputViewController: UIViewController, UITabBarControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBar.delegate = self
+        tabBar?.delegate = self
         device()
         
         hideAllContainerViews()
@@ -63,7 +63,7 @@ class ParentInputViewController: UIViewController, UITabBarControllerDelegate, U
         dbFirestoreService.updateDailyCo2Count(newCount: count)
     }
     
-    func getDate() -> String {
+    func getDateAsString() -> String {
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
@@ -71,9 +71,19 @@ class ParentInputViewController: UIViewController, UITabBarControllerDelegate, U
         return result
     }
     
-    func addTextField(textField: MDCOutlinedTextField, view: UIView, hight: Int){
+    func getCorrectWeekDay() -> String{
+           let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "EEEE"
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+        let weekDay = dateFormatter.string(from: yesterday!)
+        return weekDay
+            
+     }
+
+    
+    func addTextField(textField: MDCOutlinedTextField, view: UIView, height: Int){
         
-        let textFieldFrame = CGRect(x: 0, y: 0, width: Int(view.frame.width) - 140, height: hight)
+        let textFieldFrame = CGRect(x: 0, y: 0, width: Int(view.frame.width) - 140, height: height)
         
         textField.frame = textFieldFrame
         //textField.backgroundColor = UIColor(named: "ColorIcon")
@@ -105,14 +115,14 @@ class ParentInputViewController: UIViewController, UITabBarControllerDelegate, U
           
     }
     
-    func addEmittedTextField(textField: MDCOutlinedTextField, view: UIView, hight: Int){
+    func addEmittedTextField(textField: MDCOutlinedTextField, height: Int, view: UIView){
         
-        let textFieldFrame = CGRect(x: 0, y: 0, width: Int(view.frame.width) - 140, height: hight)
+        let textFieldFrame = CGRect(x: 0, y: 0, width: Int(view.frame.width) - 140, height: height)
         
         textField.frame = textFieldFrame
         textField.font = .systemFont(ofSize: 16)
-        textField.setTextColor(.white, for: .editing)
-        textField.setTextColor(.white, for: .normal)
+        textField.setTextColor(UIColor(named: "ColorIcon")!, for: .editing)
+        textField.setTextColor(UIColor(named: "ColorIcon")!, for: .normal)
         textField.setFloatingLabelColor(UIColor(named: "ColorIcon")!, for: .editing)
         textField.setFloatingLabelColor(UIColor(named: "ColorIcon")!, for: .disabled)
         textField.setFloatingLabelColor(.white, for: .normal)
@@ -129,6 +139,7 @@ class ParentInputViewController: UIViewController, UITabBarControllerDelegate, U
         textField.tintColor = .white
         textField.center = view.center
         textField.sizeToFit()
+        
         view.addSubview(textField)
           
     }
@@ -165,22 +176,16 @@ class ParentInputViewController: UIViewController, UITabBarControllerDelegate, U
     }
     
     private func hideAllContainerViews(){
-        containerViewCar.alpha = 0
-        containerViewClothes.alpha = 0
-        containerViewBus.alpha = 0
-        containerViewMeat.alpha = 0
-        containerViewTrain.alpha = 0
-        containerViewEl.alpha = 0
-        containerViewPlane.alpha = 0
-        containerViewHeating.alpha = 0
+        containerViewCar?.alpha = 0
+        containerViewClothes?.alpha = 0
+        containerViewBus?.alpha = 0
+        containerViewMeat?.alpha = 0
+        containerViewTrain?.alpha = 0
+        containerViewEl?.alpha = 0
+        containerViewPlane?.alpha = 0
+        containerViewHeating?.alpha = 0
     }
     
-//    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-//         let tabBarIndex = tabBarController.selectedIndex
-//         if tabBarIndex == 0 {
-//             //do your stuff
-//         }
-//    }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
             //This method will be called when user changes tab.
@@ -190,6 +195,7 @@ class ParentInputViewController: UIViewController, UITabBarControllerDelegate, U
         let indexNumber = item.tag
         
         selectedIndex(indexNumber: indexNumber)
+        
         
         }
     
@@ -215,8 +221,8 @@ class ParentInputViewController: UIViewController, UITabBarControllerDelegate, U
         case .iPhone6Plus:
             break
         case .iPhone6S:
-            hightContainerViewsConstraint.constant = 200
-            containerView.layoutIfNeeded()
+            hightContainerViewsConstraint?.constant = 200
+            containerView?.layoutIfNeeded()
         case .iPhone6SPlus:
             break
         case .iPhone7:

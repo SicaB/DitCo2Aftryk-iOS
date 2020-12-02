@@ -70,7 +70,7 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
-                                        <real key="value" value="500"/>
+                                        <real key="value" value="46"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="progressAngle">
                                         <real key="value" value="100"/>
@@ -449,7 +449,7 @@
                                 </constraints>
                             </view>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1u-nI-PAe">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="779" width="414" height="83"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <tabBarItem title="Bil" image="car" id="uAS-Cl-ZJn">
@@ -489,7 +489,7 @@
                                 <color key="selectedImageTintColor" name="ColorIcon"/>
                             </tabBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="co2windmill" translatesAutoresizingMaskIntoConstraints="NO" id="Fu1-WO-awU">
-                                <rect key="frame" x="87" y="617" width="240" height="176"/>
+                                <rect key="frame" x="87" y="617" width="240" height="142"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8sB-YN-NOV"/>
@@ -516,7 +516,7 @@
                                 <action selector="backBarButtonAction:" destination="n17-GU-GC5" id="2yF-7g-mnE"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Home" id="luP-Uf-s7g">
+                        <barButtonItem key="rightBarButtonItem" title="Home" image="house" catalog="system" id="luP-Uf-s7g">
                             <color key="tintColor" name="ColorIcon"/>
                             <connections>
                                 <action selector="homeBarButtonAction:" destination="n17-GU-GC5" id="GfQ-gc-Bnp"/>
@@ -571,43 +571,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXB-FY-W7I">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="p6L-gW-Udi">
                                 <rect key="frame" x="70" y="449" width="274" height="45"/>
-                                <color key="backgroundColor" name="ImageGreen"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <inset key="contentEdgeInsets" minX="18" minY="12" maxX="18" maxY="12"/>
-                                <state key="normal" title="Gem aftryk">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <state key="highlighted" title="Gem Aftryk">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveClothesCo2:" destination="YOB-Eo-lus" eventType="touchUpInside" id="Pih-OT-vZ5"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tøj indkøb" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fy3-XG-5M8">
-                                <rect key="frame" x="70" y="64" width="274" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" name="ColorIcon"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXB-FY-W7I">
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="45"/>
+                                        <color key="backgroundColor" name="ImageGreen"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="18" minY="12" maxX="18" maxY="12"/>
+                                        <state key="normal" title="Gem aftryk">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted" title="Gem Aftryk">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveClothesCo2:" destination="YOB-Eo-lus" eventType="touchUpInside" id="Pih-OT-vZ5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyZ-Ph-JH2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="444"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tøj indkøb" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fy3-XG-5M8">
+                                        <rect key="frame" x="146" y="205.5" width="122.5" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <color key="textColor" name="ColorIcon"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Fy3-XG-5M8" firstAttribute="centerX" secondItem="QyZ-Ph-JH2" secondAttribute="centerX" id="Der-9c-4Zo"/>
+                                    <constraint firstItem="Fy3-XG-5M8" firstAttribute="centerY" secondItem="QyZ-Ph-JH2" secondAttribute="centerY" id="aMH-Ir-JhN"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="A5c-7b-t3v"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="A5c-7b-t3v" firstAttribute="bottom" secondItem="DXB-FY-W7I" secondAttribute="bottom" constant="30" id="A8N-dK-8sp"/>
-                            <constraint firstItem="A5c-7b-t3v" firstAttribute="trailing" secondItem="Fy3-XG-5M8" secondAttribute="trailing" constant="70" id="SHq-5m-bro"/>
-                            <constraint firstItem="DXB-FY-W7I" firstAttribute="leading" secondItem="A5c-7b-t3v" secondAttribute="leading" constant="70" id="UJM-3Q-FrR"/>
-                            <constraint firstItem="Fy3-XG-5M8" firstAttribute="top" secondItem="A5c-7b-t3v" secondAttribute="top" constant="20" id="oBh-CN-YIy"/>
-                            <constraint firstItem="A5c-7b-t3v" firstAttribute="trailing" secondItem="DXB-FY-W7I" secondAttribute="trailing" constant="70" id="yPg-Ad-Eb5"/>
-                            <constraint firstItem="Fy3-XG-5M8" firstAttribute="leading" secondItem="XSM-5c-2yk" secondAttribute="leading" constant="70" id="zzY-iu-uBI"/>
+                            <constraint firstItem="A5c-7b-t3v" firstAttribute="bottom" secondItem="p6L-gW-Udi" secondAttribute="bottom" constant="30" id="Ed2-Mh-8qq"/>
+                            <constraint firstItem="QyZ-Ph-JH2" firstAttribute="top" secondItem="XSM-5c-2yk" secondAttribute="top" id="Gbm-lx-Ts5"/>
+                            <constraint firstItem="p6L-gW-Udi" firstAttribute="top" secondItem="QyZ-Ph-JH2" secondAttribute="bottom" constant="5" id="Hmc-da-wai"/>
+                            <constraint firstItem="A5c-7b-t3v" firstAttribute="trailing" secondItem="QyZ-Ph-JH2" secondAttribute="trailing" id="QBd-07-clv"/>
+                            <constraint firstItem="QyZ-Ph-JH2" firstAttribute="leading" secondItem="A5c-7b-t3v" secondAttribute="leading" id="WNV-aU-gJk"/>
+                            <constraint firstItem="p6L-gW-Udi" firstAttribute="leading" secondItem="A5c-7b-t3v" secondAttribute="leading" constant="70" id="Z65-dM-SrK"/>
+                            <constraint firstItem="A5c-7b-t3v" firstAttribute="trailing" secondItem="p6L-gW-Udi" secondAttribute="trailing" constant="70" id="iPr-AB-FJh"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="clothesSaveCo2Btn" destination="DXB-FY-W7I" id="pE1-ea-uc0"/>
+                        <outlet property="stackView" destination="p6L-gW-Udi" id="72R-A1-yd3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGb-U7-yEq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -622,44 +639,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bil transport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9P-7V-dKY">
-                                <rect key="frame" x="70" y="64" width="274" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" name="ColorIcon"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bv-1N-9sl">
-                                <rect key="frame" x="70" y="449" width="274" height="45"/>
-                                <color key="backgroundColor" name="ImageGreen"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <inset key="contentEdgeInsets" minX="18" minY="12" maxX="18" maxY="12"/>
-                                <state key="normal" title="Gem aftryk">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <state key="highlighted" title="Gem Aftryk">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveCarCo2:" destination="FxE-6Z-XS2" eventType="touchUpInside" id="5ve-5f-YKu"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="WR7-fH-xF6">
+                                <rect key="frame" x="70" y="381" width="274" height="113"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Vælg bil" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DRs-Az-6Jt">
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="50"/>
+                                        <color key="backgroundColor" name="BackgroundColorBtn"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="XJg-Dg-mJc"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bv-1N-9sl">
+                                        <rect key="frame" x="0.0" y="68" width="274" height="45"/>
+                                        <color key="backgroundColor" name="ImageGreen"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="18" minY="12" maxX="18" maxY="12"/>
+                                        <state key="normal" title="Gem aftryk">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted" title="Gem Aftryk">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveCarCo2:" destination="FxE-6Z-XS2" eventType="touchUpInside" id="5ve-5f-YKu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Puh-hX-vGk">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="381"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bil transport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9P-7V-dKY">
+                                        <rect key="frame" x="134.5" y="174" width="145.5" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <color key="textColor" name="ColorIcon"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="X9P-7V-dKY" firstAttribute="centerY" secondItem="Puh-hX-vGk" secondAttribute="centerY" id="9QM-3S-ktl"/>
+                                    <constraint firstItem="X9P-7V-dKY" firstAttribute="centerX" secondItem="Puh-hX-vGk" secondAttribute="centerX" id="UkS-ID-Loa"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="061-4A-Kv4"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="061-4A-Kv4" firstAttribute="trailing" secondItem="X9P-7V-dKY" secondAttribute="trailing" constant="70" id="KSR-Zl-rwC"/>
-                            <constraint firstItem="061-4A-Kv4" firstAttribute="trailing" secondItem="7bv-1N-9sl" secondAttribute="trailing" constant="70" id="cg4-CX-KpC"/>
-                            <constraint firstItem="X9P-7V-dKY" firstAttribute="leading" secondItem="061-4A-Kv4" secondAttribute="leading" constant="70" id="f2v-qb-EUs"/>
-                            <constraint firstItem="061-4A-Kv4" firstAttribute="bottom" secondItem="7bv-1N-9sl" secondAttribute="bottom" constant="30" id="je9-i0-d1M"/>
-                            <constraint firstItem="7bv-1N-9sl" firstAttribute="leading" secondItem="061-4A-Kv4" secondAttribute="leading" constant="70" id="qea-l9-IcE"/>
-                            <constraint firstItem="X9P-7V-dKY" firstAttribute="top" secondItem="061-4A-Kv4" secondAttribute="top" constant="20" id="upO-eu-iHF"/>
+                            <constraint firstItem="061-4A-Kv4" firstAttribute="trailing" secondItem="Puh-hX-vGk" secondAttribute="trailing" id="1Fs-zf-lgM"/>
+                            <constraint firstItem="061-4A-Kv4" firstAttribute="bottom" secondItem="WR7-fH-xF6" secondAttribute="bottom" constant="30" id="2ID-W6-YjX"/>
+                            <constraint firstItem="WR7-fH-xF6" firstAttribute="leading" secondItem="061-4A-Kv4" secondAttribute="leading" constant="70" id="fYH-Vs-k23"/>
+                            <constraint firstItem="Puh-hX-vGk" firstAttribute="leading" secondItem="061-4A-Kv4" secondAttribute="leading" id="onO-cm-Zwh"/>
+                            <constraint firstItem="061-4A-Kv4" firstAttribute="trailing" secondItem="WR7-fH-xF6" secondAttribute="trailing" constant="70" id="slW-WT-AZs"/>
+                            <constraint firstItem="WR7-fH-xF6" firstAttribute="top" secondItem="Puh-hX-vGk" secondAttribute="bottom" id="sle-C9-TlO"/>
+                            <constraint firstItem="Puh-hX-vGk" firstAttribute="top" secondItem="kS2-9K-0aX" secondAttribute="top" id="xPY-pV-0yH"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="carSaveCo2Btn" destination="7bv-1N-9sl" id="r87-aV-UQ2"/>
                         <outlet property="carView" destination="kS2-9K-0aX" id="jaF-cl-K7h"/>
+                        <outlet property="pickerViewTextField" destination="DRs-Az-6Jt" id="feA-xm-p7j"/>
+                        <outlet property="stackView" destination="WR7-fH-xF6" id="rDL-S1-Yio"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZoL-37-1ZO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -674,44 +720,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5E7-rK-uN8">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="t4m-qX-6uZ">
                                 <rect key="frame" x="70" y="449" width="274" height="45"/>
-                                <color key="backgroundColor" name="ImageGreen"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <inset key="contentEdgeInsets" minX="18" minY="12" maxX="18" maxY="12"/>
-                                <state key="normal" title="Gem aftryk">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <state key="highlighted" title="Gem Aftryk">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveBusCo2:" destination="FIJ-Xf-izP" eventType="touchUpInside" id="ZzM-yZ-byP"/>
-                                    <action selector="saveBusCo2:" destination="Wtu-jb-ACz" eventType="touchUpInside" id="l4n-bj-baz"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bus transport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80i-vU-Hbv">
-                                <rect key="frame" x="70" y="64" width="274" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" name="ColorIcon"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5E7-rK-uN8">
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="45"/>
+                                        <color key="backgroundColor" name="ImageGreen"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="18" minY="12" maxX="18" maxY="12"/>
+                                        <state key="normal" title="Gem aftryk">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted" title="Gem Aftryk">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveBusCo2:" destination="FIJ-Xf-izP" eventType="touchUpInside" id="ZzM-yZ-byP"/>
+                                            <action selector="saveBusCo2:" destination="Wtu-jb-ACz" eventType="touchUpInside" id="l4n-bj-baz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OjY-IG-oRm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="444"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bus transport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80i-vU-Hbv">
+                                        <rect key="frame" x="126.5" y="205.5" width="161.5" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <color key="textColor" name="ColorIcon"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="80i-vU-Hbv" firstAttribute="centerX" secondItem="OjY-IG-oRm" secondAttribute="centerX" id="D17-eL-eE0"/>
+                                    <constraint firstItem="80i-vU-Hbv" firstAttribute="centerY" secondItem="OjY-IG-oRm" secondAttribute="centerY" id="Sb0-ek-v2h"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Oqn-i4-JXJ"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="80i-vU-Hbv" firstAttribute="top" secondItem="Oqn-i4-JXJ" secondAttribute="top" constant="20" id="C3h-b0-87E"/>
-                            <constraint firstItem="Oqn-i4-JXJ" firstAttribute="bottom" secondItem="5E7-rK-uN8" secondAttribute="bottom" constant="30" id="Nyh-8k-UcT"/>
-                            <constraint firstItem="Oqn-i4-JXJ" firstAttribute="trailing" secondItem="5E7-rK-uN8" secondAttribute="trailing" constant="70" id="VKt-dF-GIy"/>
-                            <constraint firstItem="80i-vU-Hbv" firstAttribute="leading" secondItem="Oqn-i4-JXJ" secondAttribute="leading" constant="70" id="at1-fq-k3I"/>
-                            <constraint firstItem="5E7-rK-uN8" firstAttribute="leading" secondItem="Oqn-i4-JXJ" secondAttribute="leading" constant="70" id="i5K-Lz-hcd"/>
-                            <constraint firstItem="Oqn-i4-JXJ" firstAttribute="trailing" secondItem="80i-vU-Hbv" secondAttribute="trailing" constant="70" id="zOW-vd-1e4"/>
+                            <constraint firstItem="Oqn-i4-JXJ" firstAttribute="bottom" secondItem="t4m-qX-6uZ" secondAttribute="bottom" constant="30" id="00U-SW-toh"/>
+                            <constraint firstItem="Oqn-i4-JXJ" firstAttribute="trailing" secondItem="t4m-qX-6uZ" secondAttribute="trailing" constant="70" id="7Ob-Xu-I1x"/>
+                            <constraint firstItem="t4m-qX-6uZ" firstAttribute="leading" secondItem="Oqn-i4-JXJ" secondAttribute="leading" constant="70" id="7jA-Iv-8k9"/>
+                            <constraint firstItem="Oqn-i4-JXJ" firstAttribute="trailing" secondItem="OjY-IG-oRm" secondAttribute="trailing" id="DQ0-2r-ieh"/>
+                            <constraint firstItem="t4m-qX-6uZ" firstAttribute="top" secondItem="OjY-IG-oRm" secondAttribute="bottom" constant="5" id="R04-eQ-dla"/>
+                            <constraint firstItem="OjY-IG-oRm" firstAttribute="top" secondItem="fK2-lj-tHy" secondAttribute="top" id="dIA-Id-xef"/>
+                            <constraint firstItem="OjY-IG-oRm" firstAttribute="leading" secondItem="Oqn-i4-JXJ" secondAttribute="leading" id="gKQ-ug-zWf"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="busSaveCo2Btn" destination="5E7-rK-uN8" id="yh6-qO-pzg"/>
+                        <outlet property="stackView" destination="t4m-qX-6uZ" id="XdM-Bf-2sC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uNL-oP-ZPD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -722,52 +785,81 @@
         <!--Meat View Controller-->
         <scene sceneID="Bk5-px-PQw">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U75-pf-pvs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="H4S-I4-dV2" customClass="MeatViewController" customModule="DitCo2Aftryk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" tag="3" contentMode="scaleToFill" id="sLq-nb-Ina">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9Y-zE-bw5">
-                                <rect key="frame" x="70" y="449" width="274" height="45"/>
-                                <color key="backgroundColor" name="ImageGreen"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <inset key="contentEdgeInsets" minX="18" minY="12" maxX="18" maxY="12"/>
-                                <state key="normal" title="Gem aftryk">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <state key="highlighted" title="Gem Aftryk">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveMeatCo2:" destination="H4S-I4-dV2" eventType="touchUpInside" id="DTa-F7-YWq"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kød forbrug" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jZ-Oz-l16">
-                                <rect key="frame" x="70" y="64" width="274" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" name="ColorIcon"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="ptu-vM-Rwi">
+                                <rect key="frame" x="70" y="381" width="274" height="113"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Vælg kød" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HKu-wc-CAh">
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="50"/>
+                                        <color key="backgroundColor" name="BackgroundColorBtn"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="vno-rb-3YI"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9Y-zE-bw5">
+                                        <rect key="frame" x="0.0" y="68" width="274" height="45"/>
+                                        <color key="backgroundColor" name="ImageGreen"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="18" minY="12" maxX="18" maxY="12"/>
+                                        <state key="normal" title="Gem aftryk">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted" title="Gem Aftryk">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveMeatCo2:" destination="H4S-I4-dV2" eventType="touchUpInside" id="DTa-F7-YWq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GeL-CG-yz5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="381"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kød forbrug" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jZ-Oz-l16">
+                                        <rect key="frame" x="136.5" y="174" width="141.5" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <color key="textColor" name="ColorIcon"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="4jZ-Oz-l16" firstAttribute="centerX" secondItem="GeL-CG-yz5" secondAttribute="centerX" id="W6e-cQ-lJ3"/>
+                                    <constraint firstItem="4jZ-Oz-l16" firstAttribute="centerY" secondItem="GeL-CG-yz5" secondAttribute="centerY" id="yWS-qD-3OW"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9vb-SV-Rnf"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Q9Y-zE-bw5" firstAttribute="leading" secondItem="9vb-SV-Rnf" secondAttribute="leading" constant="70" id="VXQ-e5-eRZ"/>
-                            <constraint firstItem="4jZ-Oz-l16" firstAttribute="top" secondItem="9vb-SV-Rnf" secondAttribute="top" constant="20" id="iXF-1F-XDZ"/>
-                            <constraint firstItem="9vb-SV-Rnf" firstAttribute="trailing" secondItem="4jZ-Oz-l16" secondAttribute="trailing" constant="70" id="mN0-wr-we3"/>
-                            <constraint firstItem="9vb-SV-Rnf" firstAttribute="trailing" secondItem="Q9Y-zE-bw5" secondAttribute="trailing" constant="70" id="pGG-o6-G53"/>
-                            <constraint firstItem="9vb-SV-Rnf" firstAttribute="bottom" secondItem="Q9Y-zE-bw5" secondAttribute="bottom" constant="30" id="smw-TJ-nSH"/>
-                            <constraint firstItem="4jZ-Oz-l16" firstAttribute="leading" secondItem="9vb-SV-Rnf" secondAttribute="leading" constant="70" id="uY2-um-aWb"/>
+                            <constraint firstItem="9vb-SV-Rnf" firstAttribute="trailing" secondItem="GeL-CG-yz5" secondAttribute="trailing" id="8tM-p3-DJg"/>
+                            <constraint firstItem="GeL-CG-yz5" firstAttribute="leading" secondItem="9vb-SV-Rnf" secondAttribute="leading" id="GzQ-73-3Kk"/>
+                            <constraint firstItem="9vb-SV-Rnf" firstAttribute="trailing" secondItem="ptu-vM-Rwi" secondAttribute="trailing" constant="70" id="J20-Zw-EM8"/>
+                            <constraint firstItem="ptu-vM-Rwi" firstAttribute="leading" secondItem="9vb-SV-Rnf" secondAttribute="leading" constant="70" id="XOv-vv-Kpc"/>
+                            <constraint firstItem="GeL-CG-yz5" firstAttribute="top" secondItem="sLq-nb-Ina" secondAttribute="top" id="ZsX-Z1-neg"/>
+                            <constraint firstItem="9vb-SV-Rnf" firstAttribute="bottom" secondItem="ptu-vM-Rwi" secondAttribute="bottom" constant="30" id="cbF-tP-zsH"/>
+                            <constraint firstItem="ptu-vM-Rwi" firstAttribute="top" secondItem="GeL-CG-yz5" secondAttribute="bottom" id="jfZ-Wq-Ajf"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="meatContainerView" destination="sLq-nb-Ina" id="j8f-hb-VXH"/>
                         <outlet property="meatSaveCo2Btn" destination="Q9Y-zE-bw5" id="w6g-xo-Met"/>
+                        <outlet property="pickerViewTextField" destination="HKu-wc-CAh" id="4i1-9f-pjU"/>
+                        <outlet property="stackView" destination="ptu-vM-Rwi" id="g0k-1F-ZEx"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U75-pf-pvs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4587" y="-248"/>
         </scene>
@@ -779,42 +871,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjH-XU-wIq">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="U34-BS-lvI">
                                 <rect key="frame" x="70" y="449" width="274" height="45"/>
-                                <color key="backgroundColor" name="ImageGreen"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <inset key="contentEdgeInsets" minX="18" minY="12" maxX="18" maxY="12"/>
-                                <state key="normal" title="Gem aftryk">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <state key="highlighted" title="Gem Aftryk">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveTrainCo2:" destination="SmV-Hn-UyG" eventType="touchUpInside" id="uOb-9F-QbU"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tog transport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdO-bO-3Yk">
-                                <rect key="frame" x="70" y="64" width="274" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" name="ColorIcon"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjH-XU-wIq">
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="45"/>
+                                        <color key="backgroundColor" name="ImageGreen"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="18" minY="12" maxX="18" maxY="12"/>
+                                        <state key="normal" title="Gem aftryk">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted" title="Gem Aftryk">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveTrainCo2:" destination="SmV-Hn-UyG" eventType="touchUpInside" id="uOb-9F-QbU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4OL-1k-SVG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="444"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tog transport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdO-bO-3Yk">
+                                        <rect key="frame" x="127.5" y="205.5" width="159.5" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <color key="textColor" name="ColorIcon"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ZdO-bO-3Yk" firstAttribute="centerY" secondItem="4OL-1k-SVG" secondAttribute="centerY" id="0RW-sz-7Hz"/>
+                                    <constraint firstItem="ZdO-bO-3Yk" firstAttribute="centerX" secondItem="4OL-1k-SVG" secondAttribute="centerX" id="f2A-G3-pen"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oiK-PJ-yXW"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="oiK-PJ-yXW" firstAttribute="trailing" secondItem="rjH-XU-wIq" secondAttribute="trailing" constant="70" id="486-7a-HJc"/>
-                            <constraint firstAttribute="trailing" secondItem="ZdO-bO-3Yk" secondAttribute="trailing" constant="70" id="GBb-Wf-xCN"/>
-                            <constraint firstItem="ZdO-bO-3Yk" firstAttribute="top" secondItem="oiK-PJ-yXW" secondAttribute="top" constant="20" id="Jlt-S2-bWp"/>
-                            <constraint firstItem="ZdO-bO-3Yk" firstAttribute="leading" secondItem="oiK-PJ-yXW" secondAttribute="leading" constant="70" id="KIq-PC-Jue"/>
-                            <constraint firstItem="oiK-PJ-yXW" firstAttribute="bottom" secondItem="rjH-XU-wIq" secondAttribute="bottom" constant="30" id="OZP-p7-iNa"/>
-                            <constraint firstItem="rjH-XU-wIq" firstAttribute="leading" secondItem="oiK-PJ-yXW" secondAttribute="leading" constant="70" id="p8J-SZ-UEE"/>
+                            <constraint firstItem="oiK-PJ-yXW" firstAttribute="bottom" secondItem="U34-BS-lvI" secondAttribute="bottom" constant="30" id="1Je-Gd-9lm"/>
+                            <constraint firstItem="4OL-1k-SVG" firstAttribute="top" secondItem="D6Y-op-7nM" secondAttribute="top" id="U7B-By-Qra"/>
+                            <constraint firstItem="U34-BS-lvI" firstAttribute="leading" secondItem="oiK-PJ-yXW" secondAttribute="leading" constant="70" id="VTN-us-Vn7"/>
+                            <constraint firstItem="U34-BS-lvI" firstAttribute="top" secondItem="4OL-1k-SVG" secondAttribute="bottom" constant="5" id="XqU-3h-We1"/>
+                            <constraint firstItem="4OL-1k-SVG" firstAttribute="leading" secondItem="oiK-PJ-yXW" secondAttribute="leading" id="Ywy-2f-ui7"/>
+                            <constraint firstItem="oiK-PJ-yXW" firstAttribute="trailing" secondItem="U34-BS-lvI" secondAttribute="trailing" constant="70" id="ZM1-uc-kNG"/>
+                            <constraint firstItem="oiK-PJ-yXW" firstAttribute="trailing" secondItem="4OL-1k-SVG" secondAttribute="trailing" id="fZJ-2C-7mg"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="stackView" destination="U34-BS-lvI" id="gbb-YT-TM5"/>
                         <outlet property="trainSaveCo2Btn" destination="rjH-XU-wIq" id="yeM-nU-wPj"/>
                     </connections>
                 </viewController>
@@ -830,43 +939,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UeT-ks-eDP">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="NNs-WP-wDG">
                                 <rect key="frame" x="70" y="449" width="274" height="45"/>
-                                <color key="backgroundColor" name="ImageGreen"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <inset key="contentEdgeInsets" minX="18" minY="12" maxX="18" maxY="12"/>
-                                <state key="normal" title="Gem aftryk">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <state key="highlighted" title="Gem Aftryk">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveElCo2:" destination="VPZ-Fw-WmL" eventType="touchUpInside" id="XaC-Yk-39r"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="El forbrug" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sV-Fu-27d">
-                                <rect key="frame" x="70" y="64" width="274" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" name="ColorIcon"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UeT-ks-eDP">
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="45"/>
+                                        <color key="backgroundColor" name="ImageGreen"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="18" minY="12" maxX="18" maxY="12"/>
+                                        <state key="normal" title="Gem aftryk">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted" title="Gem Aftryk">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveElCo2:" destination="VPZ-Fw-WmL" eventType="touchUpInside" id="XaC-Yk-39r"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVL-g0-7eg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="444"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="El forbrug" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sV-Fu-27d">
+                                        <rect key="frame" x="149" y="205.5" width="116" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <color key="textColor" name="ColorIcon"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="1sV-Fu-27d" firstAttribute="centerX" secondItem="SVL-g0-7eg" secondAttribute="centerX" id="KVs-bu-mAn"/>
+                                    <constraint firstItem="1sV-Fu-27d" firstAttribute="centerY" secondItem="SVL-g0-7eg" secondAttribute="centerY" id="T3H-Df-AiT"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="F85-Lw-zj1"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="F85-Lw-zj1" firstAttribute="bottom" secondItem="UeT-ks-eDP" secondAttribute="bottom" constant="30" id="GOd-VR-gI0"/>
-                            <constraint firstItem="1sV-Fu-27d" firstAttribute="leading" secondItem="F85-Lw-zj1" secondAttribute="leading" constant="70" id="Och-kZ-VXI"/>
-                            <constraint firstItem="F85-Lw-zj1" firstAttribute="trailing" secondItem="UeT-ks-eDP" secondAttribute="trailing" constant="70" id="U3v-wg-3AW"/>
-                            <constraint firstAttribute="trailing" secondItem="1sV-Fu-27d" secondAttribute="trailing" constant="70" id="cDQ-07-M67"/>
-                            <constraint firstItem="1sV-Fu-27d" firstAttribute="top" secondItem="F85-Lw-zj1" secondAttribute="top" constant="20" id="eSL-13-UIm"/>
-                            <constraint firstItem="UeT-ks-eDP" firstAttribute="leading" secondItem="F85-Lw-zj1" secondAttribute="leading" constant="70" id="qpD-BY-woA"/>
+                            <constraint firstItem="NNs-WP-wDG" firstAttribute="top" secondItem="SVL-g0-7eg" secondAttribute="bottom" constant="5" id="0QF-pD-nqb"/>
+                            <constraint firstItem="F85-Lw-zj1" firstAttribute="bottom" secondItem="NNs-WP-wDG" secondAttribute="bottom" constant="30" id="46Q-En-lPh"/>
+                            <constraint firstItem="F85-Lw-zj1" firstAttribute="trailing" secondItem="SVL-g0-7eg" secondAttribute="trailing" id="E4d-iX-ZhA"/>
+                            <constraint firstItem="NNs-WP-wDG" firstAttribute="leading" secondItem="F85-Lw-zj1" secondAttribute="leading" constant="70" id="Plq-2Y-WxV"/>
+                            <constraint firstItem="F85-Lw-zj1" firstAttribute="trailing" secondItem="NNs-WP-wDG" secondAttribute="trailing" constant="70" id="Ucc-IS-s5q"/>
+                            <constraint firstItem="SVL-g0-7eg" firstAttribute="top" secondItem="5FA-eF-khu" secondAttribute="top" id="iNB-zb-GtS"/>
+                            <constraint firstItem="SVL-g0-7eg" firstAttribute="leading" secondItem="F85-Lw-zj1" secondAttribute="leading" id="rKb-iD-lIj"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="elSaveCo2Btn" destination="UeT-ks-eDP" id="ucg-rL-qGn"/>
+                        <outlet property="stackView" destination="NNs-WP-wDG" id="U5V-4Q-vn7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtE-Pm-XAL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -881,43 +1007,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7W6-5z-Jnm">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="KVL-y1-N5e">
                                 <rect key="frame" x="70" y="449" width="274" height="45"/>
-                                <color key="backgroundColor" name="ImageGreen"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <inset key="contentEdgeInsets" minX="18" minY="12" maxX="18" maxY="12"/>
-                                <state key="normal" title="Gem aftryk">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <state key="highlighted" title="Gem Aftryk">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="savePlaneCo2:" destination="zrS-Rn-umg" eventType="touchUpInside" id="sge-EJ-Eap"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fly transport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1o-sA-ObF">
-                                <rect key="frame" x="70" y="64" width="274" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" name="ColorIcon"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7W6-5z-Jnm">
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="45"/>
+                                        <color key="backgroundColor" name="ImageGreen"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="18" minY="12" maxX="18" maxY="12"/>
+                                        <state key="normal" title="Gem aftryk">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted" title="Gem Aftryk">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="savePlaneCo2:" destination="zrS-Rn-umg" eventType="touchUpInside" id="sge-EJ-Eap"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWC-rk-Hgg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="444"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fly transport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1o-sA-ObF">
+                                        <rect key="frame" x="131.5" y="205.5" width="151" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <color key="textColor" name="ColorIcon"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="q1o-sA-ObF" firstAttribute="centerX" secondItem="wWC-rk-Hgg" secondAttribute="centerX" id="IOl-j8-OQd"/>
+                                    <constraint firstItem="q1o-sA-ObF" firstAttribute="centerY" secondItem="wWC-rk-Hgg" secondAttribute="centerY" id="PaV-Sm-ebr"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nil-2E-hbK"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="nil-2E-hbK" firstAttribute="trailing" secondItem="7W6-5z-Jnm" secondAttribute="trailing" constant="70" id="Ply-XK-PIo"/>
-                            <constraint firstItem="7W6-5z-Jnm" firstAttribute="leading" secondItem="nil-2E-hbK" secondAttribute="leading" constant="70" id="Pzl-Re-BO9"/>
-                            <constraint firstItem="q1o-sA-ObF" firstAttribute="top" secondItem="nil-2E-hbK" secondAttribute="top" constant="20" id="Qmz-dm-ZvH"/>
-                            <constraint firstItem="nil-2E-hbK" firstAttribute="bottom" secondItem="7W6-5z-Jnm" secondAttribute="bottom" constant="30" id="TKL-2w-wPq"/>
-                            <constraint firstItem="q1o-sA-ObF" firstAttribute="leading" secondItem="nil-2E-hbK" secondAttribute="leading" constant="70" id="uWj-u6-eJO"/>
-                            <constraint firstAttribute="trailing" secondItem="q1o-sA-ObF" secondAttribute="trailing" constant="70" id="vS8-m7-XTn"/>
+                            <constraint firstItem="wWC-rk-Hgg" firstAttribute="leading" secondItem="nil-2E-hbK" secondAttribute="leading" id="2BY-be-GPO"/>
+                            <constraint firstItem="nil-2E-hbK" firstAttribute="bottom" secondItem="KVL-y1-N5e" secondAttribute="bottom" constant="30" id="ObI-sD-rz8"/>
+                            <constraint firstItem="nil-2E-hbK" firstAttribute="trailing" secondItem="wWC-rk-Hgg" secondAttribute="trailing" id="PqW-rl-5kD"/>
+                            <constraint firstItem="nil-2E-hbK" firstAttribute="trailing" secondItem="KVL-y1-N5e" secondAttribute="trailing" constant="70" id="U3H-aO-Dra"/>
+                            <constraint firstItem="wWC-rk-Hgg" firstAttribute="top" secondItem="cZl-ir-cxz" secondAttribute="top" id="lJK-7u-GcJ"/>
+                            <constraint firstItem="KVL-y1-N5e" firstAttribute="leading" secondItem="nil-2E-hbK" secondAttribute="leading" constant="70" id="nYs-E9-H0m"/>
+                            <constraint firstItem="KVL-y1-N5e" firstAttribute="top" secondItem="wWC-rk-Hgg" secondAttribute="bottom" constant="5" id="yJM-Jd-c2a"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="planeSaveCo2Btn" destination="7W6-5z-Jnm" id="QrJ-Oo-ykM"/>
+                        <outlet property="stackView" destination="KVL-y1-N5e" id="kxZ-zd-xc4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uHv-tD-gqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -932,43 +1075,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGk-TG-4cI">
-                                <rect key="frame" x="70" y="449" width="274" height="45"/>
-                                <color key="backgroundColor" name="ImageGreen"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <inset key="contentEdgeInsets" minX="18" minY="12" maxX="18" maxY="12"/>
-                                <state key="normal" title="Gem aftryk">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <state key="highlighted" title="Gem Aftryk">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveHeatingCo2:" destination="9lt-Tg-Fbg" eventType="touchUpInside" id="HVq-i4-Uzj"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Varme forbrug" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Isk-4J-Mh3">
-                                <rect key="frame" x="70" y="64" width="274" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" name="ColorIcon"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="KMN-rV-OmA">
+                                <rect key="frame" x="70" y="381" width="274" height="113"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Vælg type" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AOm-8g-hCz">
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="50"/>
+                                        <color key="backgroundColor" name="BackgroundColorBtn"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="fC2-SV-fho"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGk-TG-4cI">
+                                        <rect key="frame" x="0.0" y="68" width="274" height="45"/>
+                                        <color key="backgroundColor" name="ImageGreen"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="18" minY="12" maxX="18" maxY="12"/>
+                                        <state key="normal" title="Gem aftryk">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted" title="Gem Aftryk">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveHeatingCo2:" destination="9lt-Tg-Fbg" eventType="touchUpInside" id="HVq-i4-Uzj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sz-eF-U9D">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="381"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Varme forbrug" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Isk-4J-Mh3">
+                                        <rect key="frame" x="121.5" y="174" width="171" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <color key="textColor" name="ColorIcon"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Isk-4J-Mh3" firstAttribute="centerY" secondItem="4sz-eF-U9D" secondAttribute="centerY" id="BZV-42-BfD"/>
+                                    <constraint firstItem="Isk-4J-Mh3" firstAttribute="centerX" secondItem="4sz-eF-U9D" secondAttribute="centerX" id="GrW-RG-GQw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UMA-fw-EC8"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="UMA-fw-EC8" firstAttribute="bottom" secondItem="rGk-TG-4cI" secondAttribute="bottom" constant="30" id="9o5-0K-KLq"/>
-                            <constraint firstAttribute="trailing" secondItem="Isk-4J-Mh3" secondAttribute="trailing" constant="70" id="L3R-OQ-EZK"/>
-                            <constraint firstItem="Isk-4J-Mh3" firstAttribute="leading" secondItem="UMA-fw-EC8" secondAttribute="leading" constant="70" id="P13-2f-lq0"/>
-                            <constraint firstItem="Isk-4J-Mh3" firstAttribute="top" secondItem="UMA-fw-EC8" secondAttribute="top" constant="20" id="e3F-X1-fS2"/>
-                            <constraint firstItem="rGk-TG-4cI" firstAttribute="leading" secondItem="UMA-fw-EC8" secondAttribute="leading" constant="70" id="nu4-sL-1jg"/>
-                            <constraint firstItem="UMA-fw-EC8" firstAttribute="trailing" secondItem="rGk-TG-4cI" secondAttribute="trailing" constant="70" id="vux-qU-e3G"/>
+                            <constraint firstItem="UMA-fw-EC8" firstAttribute="bottom" secondItem="KMN-rV-OmA" secondAttribute="bottom" constant="30" id="8tz-OF-xmA"/>
+                            <constraint firstItem="4sz-eF-U9D" firstAttribute="leading" secondItem="UMA-fw-EC8" secondAttribute="leading" id="COp-tW-lIg"/>
+                            <constraint firstItem="KMN-rV-OmA" firstAttribute="top" secondItem="4sz-eF-U9D" secondAttribute="bottom" id="HID-4b-5l0"/>
+                            <constraint firstItem="UMA-fw-EC8" firstAttribute="trailing" secondItem="4sz-eF-U9D" secondAttribute="trailing" id="Wg4-f8-669"/>
+                            <constraint firstItem="4sz-eF-U9D" firstAttribute="top" secondItem="nEa-IU-IjF" secondAttribute="top" id="abe-z3-osB"/>
+                            <constraint firstItem="UMA-fw-EC8" firstAttribute="trailing" secondItem="KMN-rV-OmA" secondAttribute="trailing" constant="70" id="fTl-UT-REU"/>
+                            <constraint firstItem="KMN-rV-OmA" firstAttribute="leading" secondItem="UMA-fw-EC8" secondAttribute="leading" constant="70" id="jhS-3m-zrz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="heatingSaveCo2Btn" destination="rGk-TG-4cI" id="eh6-ux-TRP"/>
+                        <outlet property="pickerViewTextField" destination="AOm-8g-hCz" id="5ng-VO-RV2"/>
+                        <outlet property="stackView" destination="KMN-rV-OmA" id="8dq-uG-NpC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ja4-4d-PJG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -990,10 +1162,14 @@
         <image name="co2windmill" width="290" height="300"/>
         <image name="el" width="100" height="100"/>
         <image name="heating" width="100" height="100"/>
+        <image name="house" catalog="system" width="128" height="106"/>
         <image name="meat" width="100" height="100"/>
         <image name="train" width="100" height="100"/>
         <namedColor name="BackgroundColorBtn">
             <color red="0.1289999932050705" green="0.13699999451637268" blue="0.1289999932050705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorIcon">
+            <color red="0.54600000381469727" green="0.79199999570846558" blue="0.32600000500679016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ColorIcon">
             <color red="0.54600000381469727" green="0.79199999570846558" blue="0.32600000500679016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

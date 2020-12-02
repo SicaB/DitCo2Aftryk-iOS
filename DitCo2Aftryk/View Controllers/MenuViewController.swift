@@ -78,6 +78,7 @@ class MenuViewController: UIViewController, UIGestureRecognizerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+   
         
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
 
@@ -152,7 +153,6 @@ class MenuViewController: UIViewController, UIGestureRecognizerDelegate {
             
         default:
             assertionFailure("did not recognize storyboard identifier")
-            
             
         }
         
