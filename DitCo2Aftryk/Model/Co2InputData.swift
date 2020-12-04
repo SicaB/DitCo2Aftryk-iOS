@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Co2InputData {
+struct Co2InputData: Decodable {
     var id: String = UUID().uuidString
     var source: String
     var size: Float

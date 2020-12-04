@@ -39,7 +39,7 @@ class MeatViewController: UIViewController {
     
     @IBAction func saveMeatCo2(_ sender: Any) {
         let date = parentVC.getDateAsString()
-        let weekday = parentVC.getCorrectWeekDay()
+        let weekday = parentVC.getTodaysWeekDay()
         if let inputValue = meatInputTextField.text {
             if (inputValue == "," || inputValue.isEmpty) {
                 // create the alert

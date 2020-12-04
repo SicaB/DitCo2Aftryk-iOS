@@ -71,13 +71,11 @@ class ParentInputViewController: UIViewController, UITabBarControllerDelegate, U
         return result
     }
     
-    func getCorrectWeekDay() -> String{
+    func getTodaysWeekDay() -> String{
            let dateFormatter = DateFormatter()
            dateFormatter.dateFormat = "EEEE"
-        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())
-        let weekDay = dateFormatter.string(from: yesterday!)
-        return weekDay
-            
+           let weekDay = dateFormatter.string(from: Date())
+           return weekDay
      }
 
     

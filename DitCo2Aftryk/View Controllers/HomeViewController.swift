@@ -18,8 +18,18 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     private var dbFirestoreService = DBFirestoreService()
     let db = Firestore.firestore()
     var counter: Float = 0.0
+    var dataSets = [LineChartDataSet]()
+    var yValues: [ChartDataEntry] = [
+             ChartDataEntry(x: 0.0, y: 0.0),
+             ChartDataEntry(x: 1.0, y: 0.0),
+             ChartDataEntry(x: 2.0, y: 0.0),
+             ChartDataEntry(x: 3.0, y: 0.0),
+             ChartDataEntry(x: 4.0, y: 0.0),
+             ChartDataEntry(x: 5.0, y: 0.0),
+             ChartDataEntry(x: 6.0, y: 0.0)
+         ]
+    var yValueHighlight = [ChartDataEntry]()
     let deviceType = UIDevice().type
-    
     
     lazy var lineChartView: LineChartView = {
         let chartView = LineChartView()
@@ -32,18 +42,29 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var enterCo2Btn: UIButton!
     @IBOutlet weak var homeScreenChartView: UIView!
     
+    
     @IBAction func enterCo2(_ sender: Any) {
         
     }
     
+    @IBAction func didTabMenu() {
+   
+    }
+    
+    @IBAction func didTabQuestionMark(){
+        // create the alert
+               let alert = UIAlertController(title: "Denne CO2-beregner hjælper dig med at holde styr på din CO2-udledning.", message: "Øverst ser du, hvor meget CO2 du har udledt på pågældende dag. Cirklen viser din daglige CO2-udledning. Når cirklen er fyldt, har du nået den gennemsnitlige CO2-udledning, som en dansker udleder om dagen, hvilket svarer til ca. 46 kg. Nederst kan du følge med i din udledning på ugentlig basis. God fornøjelse!", preferredStyle: UIAlertController.Style.alert)
+
+               // add an action (button)
+               alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+               // show the alert
+               self.present(alert, animated: true, completion: nil)
+        return
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        
-        setWeeklyDaysToChart()
-        
-        
         setupUI()
         
         // listen to database updates when count is changed
@@ -54,29 +75,41 @@ class HomeViewController: UIViewController, ChartViewDelegate {
               }
             
             guard let data = document.data() else {
+                self.counter = 0
+                self.setWeeklyDaysToChart()
                 print("Document data was empty.")
                 return
               }
             
+            self.lineChartView.reloadInputViews()
               print("Current data: \(data)")
             
               self.dbFirestoreService.getDailyCo2Count(completion: { count in
                   if let dailyCount = count {
 //                    self.co2Counter.text = String(oldCount)
                     self.counter = dailyCount
+                    if self.counter >= 46 {
+                        self.progressBar.progressColor = .systemRed
+                        self.progressBar.progressStrokeColor = .systemRed
+                    } else if self.counter < 46 {
+                        self.progressBar.progressColor = UIColor(named: "ColorIcon")
+                        self.progressBar.progressStrokeColor = UIColor(named: "ColorIcon")
+                    }
+                    
                     self.setWeeklyDaysToChart()
                     self.viewDidAppear(true)
 
                 }
                 else  {
-                    // you got an error
+                   
+                    print("Error")
                 }
             })
             
               self.dbFirestoreService.getDateInDatabase(completion: { date in
                 if let dateInDatabase = date {
                     let today = self.getDate()
-                    let weekday = self.getTodaysWeekDay()
+                    let weekday = self.getYesterdaysWeekDay()
                     if dateInDatabase != today {
                         let dailyCountToSave = DailyCo2Count(count: self.counter, date: dateInDatabase, weekday: weekday)
                         self.dbFirestoreService.saveDailyCo2Count(data: dailyCountToSave)
@@ -84,6 +117,7 @@ class HomeViewController: UIViewController, ChartViewDelegate {
                         self.dbFirestoreService.deleteAllInputs()
                         self.counter = 0.0
                         self.progressBar.value = 0
+                      
                     
                     }
                 }
@@ -95,71 +129,128 @@ class HomeViewController: UIViewController, ChartViewDelegate {
             }
     }
     
-    func getCountsBasedOnWeekdays(){
-        //dbFirestoreService.someDict.filter
-    }
+ 
+    
+//    func getCountsBasedOnWeekdays(){
+//        //dbFirestoreService.someDict.filter
+//    }
     
     func setWeeklyDaysToChart(){
         
         var dict: [String: Double] = [:]
         self.dbFirestoreService.getWeek(completion: { dictOfWeekdaysAndCounts in
              dict = dictOfWeekdaysAndCounts
-
-            var yValues: [ChartDataEntry] = [
-                ChartDataEntry(x: 0.0, y: 0.0),
-                ChartDataEntry(x: 1.0, y: 0.0),
-                ChartDataEntry(x: 2.0, y: 0.0),
-                ChartDataEntry(x: 3.0, y: 0.0),
-                ChartDataEntry(x: 4.0, y: 0.0),
-                ChartDataEntry(x: 5.0, y: 0.0),
-                ChartDataEntry(x: 6.0, y: 0.0)
-            ]
-    
+            
+            
             for (key, value) in dict {
                 switch key {
                 case "Monday":
-                    yValues[0] = ChartDataEntry(x: 0.0, y: value)
+                    let number = value as Double
+                    print(number)
+                    if number <= 46 {
+                        self.yValues[0] = ChartDataEntry(x: 0.0, y: value)
+                    } else {
+                        self.yValues[0] = ChartDataEntry(x: 0.0, y: 46)
+                    }
                 case "Tuesday":
-                    yValues[1] = ChartDataEntry(x: 1.0, y: value)
+                    let number = value as Double
+                    if number <= 46 {
+                        self.yValues[1] = ChartDataEntry(x: 1.0, y: value)
+                    } else {
+                        self.yValues[1] = ChartDataEntry(x: 1.0, y: 46)
+                    }
                 case "Wednesday":
-                    yValues[2] = ChartDataEntry(x: 2.0, y: value)
+                    let number = value as Double
+                    if number <= 46 {
+                        self.yValues[2] = ChartDataEntry(x: 2.0, y: value)
+                    } else {
+                        self.yValues[2] = ChartDataEntry(x: 2.0, y: 46)
+                    }
                 case "Thursday":
-                    yValues[3] = ChartDataEntry(x: 3.0, y: value)
+                    let number = value as Double
+                    if number <= 46 {
+                        self.yValues[3] = ChartDataEntry(x: 3.0, y: value)
+                    } else {
+                        self.yValues[3] = ChartDataEntry(x: 3.0, y: 46)
+                    }
                 case "Friday":
-                    yValues[4] = ChartDataEntry(x: 4.0, y: value)
+                    let number = value as Double
+                    if number <= 46 {
+                        self.yValues[4] = ChartDataEntry(x: 4.0, y: value)
+                    } else {
+                        self.yValues[4] = ChartDataEntry(x: 4.0, y: 46)
+                    }
                 case "Saturday":
-                    yValues[5] = ChartDataEntry(x: 5.0, y: value)
+                    let number = value as Double
+                    if number <= 46 {
+                        self.yValues[5] = ChartDataEntry(x: 5.0, y: value)
+                    } else {
+                        self.yValues[5] = ChartDataEntry(x: 5.0, y: 46)
+                    }
                 case "Sunday":
-                    yValues[6] = ChartDataEntry(x: 6.0, y: value)
+                    let number = value as Double
+                    if number <= 46 {
+                        self.yValues[6] = ChartDataEntry(x: 6.0, y: value)
+                    } else {
+                        self.yValues[6] = ChartDataEntry(x: 6.0, y: 46)
+                    }
                 default:
                     break
                 }
                 
             }
             
+            
             let today = self.getTodaysWeekDay()
             switch today {
             case "Monday":
-                yValues[0] = ChartDataEntry(x: 0.0, y: Double(self.counter))
+                if self.counter <= 46 {
+                    self.yValues[0] = ChartDataEntry(x: 0.0, y: Double(self.counter))
+                } else {
+                    self.yValues[0] = ChartDataEntry(x: 0.0, y: 46)
+                }
             case "Tuesday":
-                yValues[1] = ChartDataEntry(x: 1.0, y: Double(self.counter))
+                if self.counter <= 46 {
+                    self.yValues[1] = ChartDataEntry(x: 1.0, y: Double(self.counter))
+                } else {
+                    self.yValues[1] = ChartDataEntry(x: 1.0, y: 46)
+                }
             case "Wednesday":
-                yValues[2] = ChartDataEntry(x: 2.0, y: Double(self.counter))
+                if self.counter <= 46 {
+                    self.yValues[2] = ChartDataEntry(x: 2.0, y: Double(self.counter))
+                } else {
+                    self.yValues[2] = ChartDataEntry(x: 2.0, y: 46)
+                }
             case "Thursday":
-                yValues[3] = ChartDataEntry(x: 3.0, y: Double(self.counter))
+                if self.counter <= 46 {
+                    self.yValues[3] = ChartDataEntry(x: 3.0, y: Double(self.counter))
+                } else {
+                    self.yValues[3] = ChartDataEntry(x: 3.0, y: 46)
+                }
             case "Friday":
-                yValues[4] = ChartDataEntry(x: 4.0, y: Double(self.counter))
+                if self.counter <= 46 {
+                    self.yValues[4] = ChartDataEntry(x: 4.0, y: Double(self.counter))
+                } else {
+                    self.yValues[4] = ChartDataEntry(x: 4.0, y: 46)
+                }
             case "Saturday":
-                yValues[5] = ChartDataEntry(x: 5.0, y: Double(self.counter))
+                if self.counter <= 46 {
+                    self.yValues[5] = ChartDataEntry(x: 5.0, y: Double(self.counter))
+                } else{
+                    self.yValues[5] = ChartDataEntry(x: 5.0, y: 46)
+                }
             case "Sunday":
-                yValues[6] = ChartDataEntry(x: 6.0, y: Double(self.counter))
+                if self.counter <= 46 {
+                    self.yValues[6] = ChartDataEntry(x: 6.0, y: Double(self.counter))
+                } else {
+                    self.yValues[6] = ChartDataEntry(x: 6.0, y: 46)
+                }
             default:
                 break
             }
             
             
-            
-            self.setChartData(yValues: yValues)
+            self.setChartData(yValues: self.yValues)
             print(dict.values)
             
       })
@@ -168,9 +259,16 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     
 
     func setChartData(yValues: [ChartDataEntry]){
-        let set1 = LineChartDataSet(entries: yValues, label: "")
+        let set1 = LineChartDataSet(entries: yValues, label: "DataSet 1")
+     //   let set2 = LineChartDataSet(entries: self.yValueHighlight, label: "DataSet 2")
+        self.dataSets.append(set1)
+      //  self.dataSets.append(set2)
+        
         let data = LineChartData(dataSet: set1)
+        //let data = LineChartData(dataSets: self.dataSets)
+        
         set1.drawValuesEnabled = false
+        set1.valueColors = [NSUIColor(cgColor: UIColor.white.cgColor)]
         set1.circleColors = [NSUIColor(cgColor: UIColor.white.cgColor)]
         set1.colors = [NSUIColor(cgColor: UIColor.init(named: "ColorIcon")!.cgColor)]
         set1.lineWidth = 4
@@ -180,13 +278,64 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         set1.highlightEnabled = true
         set1.highlightColor = NSUIColor(cgColor: UIColor.init(named: "ColorIcon")!.cgColor)
         set1.mode = LineChartDataSet.Mode.horizontalBezier
+        
+        
+//        set2.circleColors = [NSUIColor(cgColor: UIColor.blue.cgColor)]
+//        set2.drawCircleHoleEnabled = true
+//        set2.circleRadius = 8
+//        set2.circleHoleRadius = 4
+//        set2.circleHoleColor = NSUIColor(cgColor: UIColor.blue.cgColor)
         lineChartView.data = data
+       
+        //lineChartView.delegate = self
+        
         
     }
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-       print(entry)
+        print(self.yValues.firstIndex(of: entry)!)
+        
+            let indexOfEntry = self.yValues.firstIndex(of: entry)!
+        
+            //let today = self.getTodaysWeekDay()
+        self.yValueHighlight.removeAll()
+        
+        switch indexOfEntry {
+        
+        case 0:
+            self.yValueHighlight.append(entry)
+            print(self.yValueHighlight)
+            break
+        case 1:
+            self.yValueHighlight.append(entry)
+            break
+        case 2:
+            self.yValueHighlight.append(entry)
+            break
+        case 3:
+            self.yValueHighlight.append(entry)
+            break
+        case 4:
+            self.yValueHighlight.append(entry)
+            break
+        case 5:
+            self.yValueHighlight.append(entry)
+            break
+        case 6:
+            self.yValueHighlight.append(entry)
+            break
+    
+        default:
+            break
+        }
+        lineChartView.reloadInputViews()
+
     }
+    
+    func chartValueNothingSelected(_ chartView: ChartViewBase) {
+        //yValueHighlight.removeAll()
+    }
+    
     
     func progressBarSetup() {
         self.progressBar.value = CGFloat(self.counter)
@@ -208,10 +357,22 @@ class HomeViewController: UIViewController, ChartViewDelegate {
            return weekDay
      }
     
+    
+    func getYesterdaysWeekDay() -> String{
+           let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "EEEE"
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+        let weekDay = dateFormatter.string(from: yesterday!)
+        return weekDay
+            
+     }
+    
+ 
     private func setupUI() {
         
         // set progressbar value to 0 on first load
-        self.progressBar.value = 0
+        self.progressBar.value = 0.0
+        
         
         print("Running on: \(UIDevice().type)")
         
@@ -268,7 +429,8 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         
         lineChartView.setExtraOffsets(left: 20, top: 10, right: 20, bottom: 10)
         
-      //  setChartData()
+        self.setWeeklyDaysToChart()
+        
     
     }
     
@@ -330,7 +492,7 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
        
         UIView.animate(withDuration: 1.0) {
-            self.progressBar.value = CGFloat(self.counter)
+            self.progressBar?.value = CGFloat(self.counter)
             self.device()
             
         }
@@ -338,4 +500,5 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     
 
 }
+
 

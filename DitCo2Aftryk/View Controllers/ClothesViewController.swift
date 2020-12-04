@@ -33,7 +33,7 @@ class ClothesViewController: UIViewController {
 
     @IBAction func saveClothesCo2(_ sender: Any) {
         let date = parentVC.getDateAsString()
-        let weekday = parentVC.getCorrectWeekDay()
+        let weekday = parentVC.getTodaysWeekDay()
         if let inputValue = clothesInputTextField.text {
             if (inputValue == "," || inputValue.isEmpty) {
                 // create the alert

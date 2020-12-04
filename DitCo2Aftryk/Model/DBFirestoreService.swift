@@ -22,7 +22,8 @@ class DBFirestoreService {
             "id": input.id,
             "source": input.source,
             "size": input.size,
-            "date": input.date
+            "date": input.date,
+            "created": Firebase.Timestamp.init(date: Date())
         ], merge: true) {
             err in
             if let err = err {
@@ -68,7 +69,19 @@ class DBFirestoreService {
             }
 
         }
+    
+//    func getTodaysInput(){
+//        let collectionRef = db.collection("dailyCounts")
+//        collectionRef.getDocuments { (snapshot, _) in
+////            let documents = snapshot!.documents
+////            try! documents.forEach{ document in
+//
+//            let counts: [Co2InputData] = try! snapshot!.decoded()
+//            counts.forEach({ print($0)})
+//
+//        }
 //    }
+
     
     
     
@@ -105,147 +118,7 @@ class DBFirestoreService {
                     }
                     
                 }
-                
         }
-
-    
-//    func getWeeklyCo2Counts(completion: @escaping ([Double]) -> Void) {
-//        var counts = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-//
-//        let collectionRefMonday = db.collection("dailyCounts").order(by: "created", descending: true).limit(to: 1).whereField("weekday", isEqualTo: "Monday")
-//
-//        collectionRefMonday.getDocuments { (querySnapshot, err) in
-//            if let err = err {
-//                print("error getting document monday: \(err)")
-//                counts.insert(0.0, at: 0)
-//            } else {
-//                for document in querySnapshot!.documents {
-//                        if let size = document.get("size"){
-//                            let mondayCount = size as? Double
-//                            counts.insert(mondayCount ?? 0.0, at: 0)
-//                            //print(mondayCount!)
-//                        }
-//
-//                    }
-//                }
-//            }
-//
-//        let collectionRefTuesday = db.collection("dailyCounts").order(by: "created", descending: true).limit(to: 1).whereField("weekday", isEqualTo: "Tuesday")
-//
-//        collectionRefTuesday.getDocuments { (querySnapshot, err) in
-//
-//            if let err = err {
-//                print("No document for tuesday: \(err)")
-//                counts.insert(0.0, at: 1)
-//            } else {
-//                for document in querySnapshot!.documents {
-//                        if let size = document.get("size"){
-//                            let tuesdayCount = size as? Double
-//                            counts.insert(tuesdayCount ?? 0.0, at: 1)
-//                            //print(tuesdayCount!)
-//                        }
-//
-//                    }
-//                }
-//            }
-//
-//        let collectionRefWednesday = db.collection("dailyCounts").order(by: "created", descending: true).limit(to: 1).whereField("weekday", isEqualTo: "Wednesday")
-//        collectionRefWednesday.getDocuments { (querySnapshot, err) in
-//
-//            if let err = err {
-//                print("error getting document wednesday: \(err)")
-//                counts.insert(0.0, at: 2)
-//            } else {
-//                for document in querySnapshot!.documents {
-//                        if let size = document.get("size"){
-//                            let wednesdayCount = size as? Double
-//                            counts.insert(wednesdayCount ?? 0.0, at: 2)
-//
-//                        }
-//
-//                    }
-//                }
-//            }
-//
-//
-//        let collectionRefThursday = db.collection("dailyCounts").order(by: "created", descending: true).limit(to: 1).whereField("weekday", isEqualTo: "Thursday")
-//        collectionRefThursday.getDocuments { (querySnapshot, err) in
-//
-//            if let err = err {
-//                print("error getting document thursday: \(err)")
-//                counts.insert(0.0, at: 3)
-//            } else {
-//                for document in querySnapshot!.documents {
-//                        if let size = document.get("size"){
-//                            let thursdayCount = size as? Double
-//                            counts.insert(thursdayCount ?? 0.0, at: 3)
-//
-//                        }
-//
-//                    }
-//                }
-//            }
-//
-//        let collectionRefFriday = db.collection("dailyCounts").order(by: "created", descending: true).limit(to: 1).whereField("weekday", isEqualTo: "Friday")
-//        collectionRefFriday.getDocuments { (querySnapshot, err) in
-//
-//            if let err = err {
-//                print("error getting document friday: \(err)")
-//                counts.insert(0.0, at: 4)
-//            } else {
-//                for document in querySnapshot!.documents {
-//                        if let size = document.get("size"){
-//                            let fridayCount = size as? Double
-//                            counts.insert(fridayCount ?? 0.0, at: 4)
-//
-//                        }
-//
-//                    }
-//                }
-//            }
-//
-//        let collectionRefSaturday = db.collection("dailyCounts").order(by: "created", descending: true).limit(to: 1).whereField("weekday", isEqualTo: "Saturday")
-//        collectionRefSaturday.getDocuments { (querySnapshot, err) in
-//
-//            if let err = err {
-//                print("error getting document saturday: \(err)")
-//                counts.insert(0.0, at: 5)
-//            } else {
-//                for document in querySnapshot!.documents {
-//                        if let size = document.get("size"){
-//                            let saturdayCount = size as? Double
-//                            counts.insert(saturdayCount ?? 0.0, at: 5)
-//
-//                        }
-//
-//                    }
-//                }
-//            }
-//
-//        let collectionRefSunday = db.collection("dailyCounts").order(by: "created", descending: true).limit(to: 1).whereField("weekday", isEqualTo: "Sunday")
-//        collectionRefSunday.getDocuments { (querySnapshot, err) in
-//
-//            if let err = err {
-//                print("error getting document sunday: \(err)")
-//                counts.insert(0.0, at: 6)
-//            } else {
-//                for document in querySnapshot!.documents {
-//                        if let size = document.get("size"){
-//                            let sundayCount = size as? Double
-//                            counts.insert(sundayCount ?? 0.0, at: 6)
-//                            print(counts)
-//                        }
-//
-//                    }
-//                }
-//            }
-//
-//        print(counts)
-//        completion(counts)
-//
-//
-//
-//    }
     
     func getDateInDatabase(completion: @escaping (String?) -> Void) {
         let collectionRef = db.collection("todaysCountAccumulated")
@@ -317,6 +190,10 @@ class DBFirestoreService {
                 print("Daily Co2 succesfully written")
             }
         }
+    }
+    
+    func deleteLastInput(){
+        let collectionRef = db.collection("inputData").order(by: "")
     }
 
     

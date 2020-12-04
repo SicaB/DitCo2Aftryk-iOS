@@ -40,7 +40,7 @@ class CarViewController: UIViewController {
     
     @IBAction func saveCarCo2(_ sender: Any) {
         let date = parentVC.getDateAsString()
-        let weekday = parentVC.getCorrectWeekDay()
+        let weekday = parentVC.getTodaysWeekDay()
         if let inputValue = carInputTextField.text {
             if (inputValue == "," || inputValue.isEmpty) {
                 // create the alert
