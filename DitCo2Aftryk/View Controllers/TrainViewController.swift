@@ -21,7 +21,7 @@ class TrainViewController: UIViewController {
     let trainInputTextField = MDCOutlinedTextField()
     let emittedCo2 = MDCOutlinedTextField()
     
-    private var co2Input = Co2InputData(source: "", size: 0, date: "")
+    private var co2Input = Co2InputData(source: "", size: 0, date: "", input: 0)
     private var dailyCount = DailyCo2Count(count: 0, date: "", weekday: "")
     
     override func viewDidLoad() {
@@ -48,7 +48,7 @@ class TrainViewController: UIViewController {
                 let input = NumberFormatter().number(from: trainInputTextField.text!)
                 if let inputNumber = input {
                     let calculatedCo2 = Float(truncating: inputNumber) * 0.065
-                    co2Input = Co2InputData(source: "train", size: calculatedCo2, date: date)
+                    co2Input = Co2InputData(source: "Tog transport", size: calculatedCo2, date: date, input: Float(truncating: inputNumber))
                 dailyCount = DailyCo2Count(count: calculatedCo2, date: date, weekday: weekday)
                 parentVC.saveInputData(input: co2Input)
                 parentVC.saveDailyCount(count: dailyCount)

@@ -17,7 +17,7 @@ class TableViewController: UIViewController {
     }
     
     private var dbFirestoreService = DBFirestoreService()
-    var items = ["Slet seneste indtastning", "Slet indtastninger i dag", "Se indtastninger"]
+    var items = ["Slet seneste indtastning", "Slet indtastninger i dag", "Se dagens indtastninger"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,12 +46,34 @@ extension TableViewController: UITableViewDelegate {
         
         switch indexPath.row {
         case 0:
-            print(indexPath.row)
+            let refreshAlert = UIAlertController(title: "Slet seneste indtastning?", message: "Du er ved at slette din seneste indtastning. Er du sikker?", preferredStyle: UIAlertController.Style.alert)
+
+            refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                self.dbFirestoreService.deleteLastInput()
+                self.navigationController!.popToRootViewController(animated: true)
+            }))
+
+            refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+                  return
+            }))
+
+            present(refreshAlert, animated: true, completion: nil)
+            
         case 1:
-            dbFirestoreService.deleteAllInputs()
-            dbFirestoreService.deleteAccumulatedCount()
-            self.navigationController!.popToRootViewController(animated: true)
-            print(indexPath.row)
+            let refreshAlert = UIAlertController(title: "Slet dagens indtastninger?", message: "Alle dine indtasninger vil blive slettet. Er du sikker?", preferredStyle: UIAlertController.Style.alert)
+
+            refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                self.dbFirestoreService.deleteAllInputs()
+                self.dbFirestoreService.deleteAccumulatedCount()
+                self.navigationController!.popToRootViewController(animated: true)
+            }))
+
+            refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+                  return
+            }))
+
+            present(refreshAlert, animated: true, completion: nil)
+           
         
         case 2:
             performSegue(withIdentifier: "showList", sender: self)
@@ -62,28 +84,6 @@ extension TableViewController: UITableViewDelegate {
         }
         
     }
-    
-    
-    
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            self.items.remove(at: indexPath.row)
-//            self.tableView.deleteRows(at: [indexPath], with: .left)
-//        }
-//
-//    }
-//
-//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
-//            self.items.remove(at: indexPath.row)
-//            self.tableView.deleteRows(at: [indexPath], with: .automatic)
-//            completionHandler(true)
-//        }
-//        deleteAction.image = UIImage(systemName: "trash")
-//        deleteAction.backgroundColor = .systemRed
-//        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
-//        return configuration
-//    }
 
     
 
@@ -102,7 +102,7 @@ extension TableViewController: UITableViewDataSource {
         cell.backgroundColor = UIColor.black
         
         let bgColorView = UIView()
-        bgColorView.backgroundColor = UIColor.black
+        bgColorView.backgroundColor = UIColor.darkGray
         cell.selectedBackgroundView = bgColorView
         
         return cell

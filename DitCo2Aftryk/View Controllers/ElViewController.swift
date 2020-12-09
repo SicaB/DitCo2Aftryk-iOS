@@ -21,7 +21,7 @@ class ElViewController: UIViewController {
     let elInputTextField = MDCOutlinedTextField()
     let emittedCo2 = MDCOutlinedTextField()
     
-    private var co2Input = Co2InputData(source: "", size: 0, date: "")
+    private var co2Input = Co2InputData(source: "", size: 0, date: "", input: 0)
     private var dailyCount = DailyCo2Count(count: 0, date: "", weekday: "")
     
     override func viewDidLoad() {
@@ -47,7 +47,7 @@ class ElViewController: UIViewController {
                 let input = NumberFormatter().number(from: elInputTextField.text!)
                 if let inputNumber = input {
                     let calculatedCo2 = Float(truncating: inputNumber) * 0.244
-                co2Input = Co2InputData(source: "el", size: calculatedCo2, date: date)
+                co2Input = Co2InputData(source: "El-forbrug", size: calculatedCo2, date: date, input: Float(truncating: inputNumber))
                 dailyCount = DailyCo2Count(count: calculatedCo2, date: date, weekday: weekday)
                 parentVC.saveInputData(input: co2Input)
                 parentVC.saveDailyCount(count: dailyCount)

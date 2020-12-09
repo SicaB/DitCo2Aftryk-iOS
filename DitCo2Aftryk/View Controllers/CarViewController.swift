@@ -27,7 +27,7 @@ class CarViewController: UIViewController {
     var selectedCarType: String?
     let carType = ["Vælg bil", "Lille bil", "Mellemstor bil", "Stor bil", "Diesel bil", "Hybrid bil", "El-bil"]
 
-    private var co2Input = Co2InputData(source: "", size: 0, date: "")
+    private var co2Input = Co2InputData(source: "", size: 0, date: "", input: 0)
     private var dailyCount = DailyCo2Count(count: 0, date: "", weekday: "")
     
     override func viewDidLoad() {
@@ -56,7 +56,7 @@ class CarViewController: UIViewController {
                 let input = NumberFormatter().number(from: carInputTextField.text!)
                 if let inputNumber = input {
                     let calculatedCo2 = Float(truncating: inputNumber) * self.co2BasedOnCarType()
-                    co2Input = Co2InputData(source: "car", size: calculatedCo2, date: date)
+                    co2Input = Co2InputData(source: "Bil Transport", size: calculatedCo2, date: date, input: Float(truncating: inputNumber))
                     dailyCount = DailyCo2Count(count: calculatedCo2, date: date, weekday: weekday)
                     parentVC.saveInputData(input: co2Input)
                     parentVC.saveDailyCount(count: dailyCount)

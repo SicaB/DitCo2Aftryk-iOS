@@ -47,10 +47,6 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         
     }
     
-    @IBAction func didTabMenu() {
-   
-    }
-    
     @IBAction func didTabQuestionMark(){
         // create the alert
                let alert = UIAlertController(title: "Denne CO2-beregner hjælper dig med at holde styr på din CO2-udledning.", message: "Øverst ser du, hvor meget CO2 du har udledt på pågældende dag. Cirklen viser din daglige CO2-udledning. Når cirklen er fyldt, har du nået den gennemsnitlige CO2-udledning, som en dansker udleder om dagen, hvilket svarer til ca. 46 kg. Nederst kan du følge med i din udledning på ugentlig basis. God fornøjelse!", preferredStyle: UIAlertController.Style.alert)
@@ -77,11 +73,16 @@ class HomeViewController: UIViewController, ChartViewDelegate {
             guard let data = document.data() else {
                 self.counter = 0
                 self.setWeeklyDaysToChart()
+                self.deleteSelectedChartValue()
+                self.progressBar.value = 0
+                self.navigationItem.title = "I dag"
                 print("Document data was empty.")
                 return
               }
             
-            self.lineChartView.reloadInputViews()
+            self.lineChartView.data?.notifyDataChanged()
+            self.lineChartView.notifyDataSetChanged()
+            self.navigationItem.title = "I dag"
               print("Current data: \(data)")
             
               self.dbFirestoreService.getDailyCo2Count(completion: { count in
@@ -96,6 +97,7 @@ class HomeViewController: UIViewController, ChartViewDelegate {
                         self.progressBar.progressStrokeColor = UIColor(named: "ColorIcon")
                     }
                     
+                    self.deleteSelectedChartValue()
                     self.setWeeklyDaysToChart()
                     self.viewDidAppear(true)
 
@@ -117,6 +119,9 @@ class HomeViewController: UIViewController, ChartViewDelegate {
                         self.dbFirestoreService.deleteAllInputs()
                         self.counter = 0.0
                         self.progressBar.value = 0
+                        if self.yValueHighlight.count == 1 {
+                            self.yValueHighlight.removeAll()
+                        }
                       
                     
                     }
@@ -128,8 +133,6 @@ class HomeViewController: UIViewController, ChartViewDelegate {
             
             }
     }
-    
- 
     
 //    func getCountsBasedOnWeekdays(){
 //        //dbFirestoreService.someDict.filter
@@ -146,7 +149,6 @@ class HomeViewController: UIViewController, ChartViewDelegate {
                 switch key {
                 case "Monday":
                     let number = value as Double
-                    print(number)
                     if number <= 46 {
                         self.yValues[0] = ChartDataEntry(x: 0.0, y: value)
                     } else {
@@ -251,22 +253,52 @@ class HomeViewController: UIViewController, ChartViewDelegate {
             
             
             self.setChartData(yValues: self.yValues)
-            print(dict.values)
+            //print("dict values: \(dict.values)")
+            
             
       })
         
     }
     
+    func deleteSelectedChartValue(){
+        self.yValueHighlight.removeAll()
+        let set2 = LineChartDataSet(entries: self.yValueHighlight, label: "DataSet 2")
+      
+        if self.dataSets.count < 2 {
+            self.dataSets.append(set2)
+        } else {
+            self.dataSets[1] = set2
+        }
+        
+        let chartData = LineChartData(dataSets: self.dataSets)
+        self.lineChartView.data = chartData
+    }
+    
+    func setChartData2(yValuesHighligt: [ChartDataEntry]) {
+        let set2 = LineChartDataSet(entries: self.yValueHighlight, label: "DataSet 2")
+        set2.circleColors = [NSUIColor(cgColor: UIColor.white.cgColor)]
+        set2.drawCircleHoleEnabled = true
+        set2.circleRadius = 12
+        set2.circleHoleRadius = 6
+        set2.valueColors = [NSUIColor(cgColor: UIColor.white.cgColor)]
+        set2.valueFont = UIFont(name: "Verdana", size: 10.0)!
+        set2.setDrawHighlightIndicators(false)
+        set2.circleHoleColor = NSUIColor(cgColor: UIColor.init(named: "DarkGreen")!.cgColor)
+        
+      
+        if self.dataSets.count < 2 {
+            self.dataSets.append(set2)
+        } else {
+            self.dataSets[1] = set2
+        }
+        
+        let data = LineChartData(dataSets: self.dataSets)
+        lineChartView.data = data
+    }
+    
 
     func setChartData(yValues: [ChartDataEntry]){
         let set1 = LineChartDataSet(entries: yValues, label: "DataSet 1")
-     //   let set2 = LineChartDataSet(entries: self.yValueHighlight, label: "DataSet 2")
-        self.dataSets.append(set1)
-      //  self.dataSets.append(set2)
-        
-        let data = LineChartData(dataSet: set1)
-        //let data = LineChartData(dataSets: self.dataSets)
-        
         set1.drawValuesEnabled = false
         set1.valueColors = [NSUIColor(cgColor: UIColor.white.cgColor)]
         set1.circleColors = [NSUIColor(cgColor: UIColor.white.cgColor)]
@@ -279,61 +311,80 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         set1.highlightColor = NSUIColor(cgColor: UIColor.init(named: "ColorIcon")!.cgColor)
         set1.mode = LineChartDataSet.Mode.horizontalBezier
         
-        
-//        set2.circleColors = [NSUIColor(cgColor: UIColor.blue.cgColor)]
-//        set2.drawCircleHoleEnabled = true
-//        set2.circleRadius = 8
-//        set2.circleHoleRadius = 4
-//        set2.circleHoleColor = NSUIColor(cgColor: UIColor.blue.cgColor)
-        lineChartView.data = data
+        if self.dataSets.count < 1 {
+            self.dataSets.append(set1)
+        } else {
+            self.dataSets[0] = set1
+        }
        
-        //lineChartView.delegate = self
         
-        
+        //let data = LineChartData(dataSet: set1)
+        let data = LineChartData(dataSets: self.dataSets)
+        lineChartView.data = data
     }
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        print(self.yValues.firstIndex(of: entry)!)
         
-            let indexOfEntry = self.yValues.firstIndex(of: entry)!
+        //print(self.yValues.firstIndex(of: entry)!)
+        
+        
+        self.yValueHighlight.removeAll()
+        lineChartView.notifyDataSetChanged()
+        lineChartView.data?.notifyDataChanged()
+        let indexOfEntry = self.yValues.firstIndex(of: entry)!
         
             //let today = self.getTodaysWeekDay()
-        self.yValueHighlight.removeAll()
+        
         
         switch indexOfEntry {
         
         case 0:
             self.yValueHighlight.append(entry)
-            print(self.yValueHighlight)
-            break
+            self.navigationItem.title = "Mandag"
+            self.progressBar.value = CGFloat(self.yValues[0].y)
+            
         case 1:
             self.yValueHighlight.append(entry)
-            break
+            self.navigationItem.title = "Tirsdag"
+            self.progressBar.value = CGFloat(self.yValues[1].y)
+           
         case 2:
             self.yValueHighlight.append(entry)
-            break
+            self.navigationItem.title = "Onsdag"
+            self.progressBar.value = CGFloat(self.yValues[2].y)
+            
         case 3:
             self.yValueHighlight.append(entry)
-            break
+            self.navigationItem.title = "Torsdag"
+            self.progressBar.value = CGFloat(self.yValues[3].y)
+            
         case 4:
             self.yValueHighlight.append(entry)
-            break
+            self.navigationItem.title = "Fredag"
+            self.progressBar.value = CGFloat(self.yValues[4].y)
+            
         case 5:
             self.yValueHighlight.append(entry)
-            break
+            self.navigationItem.title = "Lørdag"
+            self.progressBar.value = CGFloat(self.yValues[5].y)
+            
         case 6:
             self.yValueHighlight.append(entry)
-            break
+            self.navigationItem.title = "Søndag"
+            self.progressBar.value = CGFloat(self.yValues[6].y)
+            
     
         default:
             break
         }
-        lineChartView.reloadInputViews()
+        
+        setChartData2(yValuesHighligt: self.yValueHighlight)
+       
 
     }
     
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
-        //yValueHighlight.removeAll()
+        yValueHighlight.removeAll()
     }
     
     
@@ -428,7 +479,7 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         lineChartView.leftAxis.maxWidth = 46
         
         lineChartView.setExtraOffsets(left: 20, top: 10, right: 20, bottom: 10)
-        
+        lineChartView.delegate = self
         self.setWeeklyDaysToChart()
         
     

@@ -13,11 +13,13 @@ struct Co2InputData: Decodable {
     var source: String
     var size: Float
     var date: String
+    var input: Float
     
-    init(source: String, size: Float, date: String) {
+    init(source: String, size: Float, date: String, input: Float) {
         self.source = source
         self.size = size
         self.date = date
+        self.input = input
         
     }
 }

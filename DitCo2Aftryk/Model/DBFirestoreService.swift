@@ -15,7 +15,6 @@ class DBFirestoreService {
     let db = Firestore.firestore()
     var oldCount = DailyCo2Count(count: 0.0, date: "", weekday: "")
     
-    
     func saveCo2(input: Co2InputData) {
         
         db.collection("inputData").document().setData([
@@ -23,6 +22,7 @@ class DBFirestoreService {
             "source": input.source,
             "size": input.size,
             "date": input.date,
+            "input": input.input,
             "created": Firebase.Timestamp.init(date: Date())
         ], merge: true) {
             err in
@@ -95,7 +95,7 @@ class DBFirestoreService {
         collectionRef.getDocuments  { (snapshot, err) in
 
                 if let err = err {
-                    print("error getting document monday: \(err)")
+                    print("error getting document dailyCounts: \(err)")
                     
                 } else {
                     guard let snap = snapshot else { return }
@@ -134,6 +134,49 @@ class DBFirestoreService {
             
         }
     }
+    
+    func getAllInputs(completion: @escaping ([String], [String]) -> Void) {
+        let collectionRef = db.collection("inputData").order(by: "created", descending: true)
+        
+      //  var tuple: (key: String, val: String)? = nil
+        var sources = [String]()
+        var inputs = [String]()
+        
+        collectionRef.getDocuments  { (snapshot, err) in
+        
+            if let err = err {
+                print("error getting document inputData: \(err)")
+            
+            } else {
+                guard let snap = snapshot else { return }
+                for document in snap.documents {
+                    
+                    let data = document.data()
+                    
+               
+                    let source = data["source"] as? String ?? ""
+                    let input = data["input"] as? Float ?? 0.0
+                    //tuple = (source, input)
+                    
+                    let info = InputListData(source: source, input: input)
+                    sources.append(info.source)
+                    inputs.append(String(info.input))
+                    //tuple = (sources, inputs)
+                    //print(source)
+                    //print(inputs)
+                    
+                }
+            
+                
+                completion(sources, inputs)
+               
+            
+            }
+        
+        }
+        
+    }
+    
     
     
     func updateDailyCo2Count(newCount: DailyCo2Count) {
@@ -175,6 +218,22 @@ class DBFirestoreService {
         }
     }
     
+    func saveNewAccumSize(data: DailyCo2Count) {
+        db.collection("todaysCountAccumulated").document("todaysCount").setData([
+            "count": data.count,
+            "date": data.date,
+            "weekday": data.weekday,
+        ], merge: true) {
+            err in
+            if let err = err {
+                print("Error writing to accumulatedCount document: \(err)")
+            } else {
+                print("Daily Co2 updated!")
+            }
+        }
+        
+    }
+    
     // function to save the accumulated daily count in a new collection
     func saveDailyCo2Count(data: DailyCo2Count) {
         db.collection("dailyCounts").document().setData([
@@ -193,7 +252,36 @@ class DBFirestoreService {
     }
     
     func deleteLastInput(){
-        let collectionRef = db.collection("inputData").order(by: "")
+        let collectionRef = db.collection("inputData").order(by: "created", descending: true).limit(to: 1)
+        
+        collectionRef.getDocuments { (snapshot, err) in
+            if let err = err {
+                print("error getting document dailyCounts: \(err)")
+                
+            } else {
+                for document in snapshot!.documents {
+                    let data = document.data()
+                    let lastInputSize = data["size"] as? Float ?? 0.0
+                    
+                    self.getDailyCo2Count(completion: { count in
+                        if let oldAccumSize = count {
+                            
+                            let newAccumSize = (oldAccumSize - lastInputSize)
+                            let updatedSize = DailyCo2Count(count: newAccumSize, date: self.getDate(), weekday: self.getTodaysWeekDay())
+                            
+                            self.saveNewAccumSize(data: updatedSize)
+                            document.reference.delete()
+                            
+                        }
+                        
+                    })
+                    
+                    
+                    
+                    print("Last input deleted")
+                }
+            }
+        }
     }
 
     
@@ -221,6 +309,21 @@ class DBFirestoreService {
                      }}
         
     }
+    
+    func getDate() -> String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        let result = formatter.string(from: date)
+        return result
+    }
+    
+    func getTodaysWeekDay() -> String{
+           let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "EEEE"
+           let weekDay = dateFormatter.string(from: Date())
+           return weekDay
+     }
     
  }
 

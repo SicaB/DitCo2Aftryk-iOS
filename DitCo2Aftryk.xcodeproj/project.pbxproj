@@ -30,6 +30,7 @@
 		99379B8F2579273E006DFAE4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99379B8E2579273E006DFAE4 /* TableViewController.swift */; };
 		99379B9425799548006DFAE4 /* ListOfInputsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99379B9325799548006DFAE4 /* ListOfInputsViewController.swift */; };
 		994074F9256BC0D300BD5B38 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994074F8256BC0D300BD5B38 /* Model.swift */; };
+		99C8C0A2257ED1430096FE7A /* inputListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C8C0A1257ED1430096FE7A /* inputListData.swift */; };
 		99CD0675253ED99600486BC0 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD0674253ED99600486BC0 /* CarViewController.swift */; };
 		99CD067D253EEF3D00486BC0 /* ParentInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD067C253EEF3D00486BC0 /* ParentInputViewController.swift */; };
 		99CD0685253EF4AA00486BC0 /* ClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD0684253EF4AA00486BC0 /* ClothesViewController.swift */; };
@@ -91,6 +92,7 @@
 		99379B8E2579273E006DFAE4 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		99379B9325799548006DFAE4 /* ListOfInputsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfInputsViewController.swift; sourceTree = "<group>"; };
 		994074F8256BC0D300BD5B38 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		99C8C0A1257ED1430096FE7A /* inputListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputListData.swift; sourceTree = "<group>"; };
 		99CD0674253ED99600486BC0 /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
 		99CD067C253EEF3D00486BC0 /* ParentInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentInputViewController.swift; sourceTree = "<group>"; };
 		99CD0684253EF4AA00486BC0 /* ClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				992FF505255D30F0004BFB66 /* DailyCo2Count.swift */,
 				992FF50A255D352A004BFB66 /* SnapshotExtensions.swift */,
 				99379B412574436A006DFAE4 /* WeeklyCo2Counts.swift */,
+				99C8C0A1257ED1430096FE7A /* inputListData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -167,8 +170,8 @@
 				99CD069425405F9D00486BC0 /* MeatViewController.swift */,
 				99CD069925405FAD00486BC0 /* TrainViewController.swift */,
 				99CD069E25405FBC00486BC0 /* ElViewController.swift */,
-				99CD06A325405FCB00486BC0 /* PlaneViewController.swift */,
 				99CD06A825405FDA00486BC0 /* HeatingViewController.swift */,
+				99CD06A325405FCB00486BC0 /* PlaneViewController.swift */,
 				99379B8E2579273E006DFAE4 /* TableViewController.swift */,
 				99379B9325799548006DFAE4 /* ListOfInputsViewController.swift */,
 			);
@@ -491,6 +494,7 @@
 				99CD069F25405FBC00486BC0 /* ElViewController.swift in Sources */,
 				99CD067D253EEF3D00486BC0 /* ParentInputViewController.swift in Sources */,
 				99CD06A925405FDA00486BC0 /* HeatingViewController.swift in Sources */,
+				99C8C0A2257ED1430096FE7A /* inputListData.swift in Sources */,
 				993625322510BFAF002BF468 /* MenuViewController.swift in Sources */,
 				99CD0675253ED99600486BC0 /* CarViewController.swift in Sources */,
 				99CD069525405F9D00486BC0 /* MeatViewController.swift in Sources */,
